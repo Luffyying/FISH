@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Document</title>
+	<meta charset = 'utf-8'>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		#container{
+			/*凡是百分数都是针对父元素的*/
+			width: 100%;
+			height: 100%;
+			background:url(imgs/bg.jpg);
+			position: relative;
+		}
+		#container img{
+			width: 125px;
+			height: 125px;
+			position: absolute;
+			border: 5px solid #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="container"> </div>
+	<script src="1animate.js"></script>
+	<script type="text/javascript">
+		//动态创建
+		var row =3,col = 5,count = 0;//表示已经加载的图片的数量
+		var img_width =125,img_height =125;
+		var zIndex=0;
+		var oContainer = document.getElementById('container');
+		//var aImg = [];
+		//图片预加载
+		for(var i =0; i<row*col;i++)
+		{
+			var oImg = new Image();
+			//oContainer.appendChild(oImg);
+			oImg.onload = function(){
+				count++;
+				if(count == row*col)
+					loadSuccess();
+			};
+			oImg.src = 'imgs/'+(i+1)+'.jpg';//在IE中，只有把src放在onload中才好用
+			//aImg.push(oImg);//每次创建的时候都动态加入到数组，保存起来
+		}
+		//图片加载成功后的处理方法
+		function loadSuccess(){
+			var iColGap = (oContainer.offsetWidth - col*img_width)/(col + 1);
+			var iRowGap = (oContainer.offsetHeight - row*img_height)/(row + 1);
+			var index = 0;//代表图片的索引
+			for(var i=0;i<row;i++){
+				for(var j=0; j<col;j++)
+				{
+					index++;
+					var oImg = document.createElement('img');
+					oImg.src = 'img-new/'+index+'.jpg';
+					//定位
+					oImg.id ='img'+index;
+					oImg.style.left = iColGap + j *(img_width + iColGap)+'px';
+					oImg.style.top = iRowGap + i *(img_height + iRowGap)+'px';
+					oContainer.appendChild(oImg);
+				}
+		}
+			
+		};
+		// var aImg = document.getElementsByTagName('img');
+		// for(var i=0;i<aImg.length;i++)
+		// {
+		//  aImg[i].index = i;
+		// 	aImg[i].onmouseover = function(){
+		// 		this.index
+		// 	}
+		// }
+		oContainer.onmouseover = function(e){
+			e = e||window.event;
+			//debugger;//设置断点 ，当代码很多的时候
+			var target = e.target ||e.srcElement;
+			if(target.id!='container')
+			{
+				var oImg = document.getElementById(target.id);
+				oImg.style.zIndex = ++zIndex;
+				animate(oImg,{
+					width:180,
+					height:180,
+					marginLeft:-30,
+					marginTop:-30
+				});
+			}
+			//console.log(target.id)//取到当前对象 图片
+		};
+		oContainer.onmouseout = function(e){
+			e = e||window.event;
+			//debugger;//设置断点 ，当代码很多的时候
+			var target = e.target ||e.srcElement;
+			if(target.id!='container')
+			{
+				var oImg = document.getElementById(target.id);
+				oImg.style.zIndex = ++zIndex;
+				animate(oImg,{
+					width:img_width,
+					height:img_height,
+					marginLeft:0,
+					marginTop:0
+				});
+			}
+		};
+	</script>
+</body>
+</html>
