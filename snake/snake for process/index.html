@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="container">
+		<div id="ground">
+			
+		</div>
+		<div id="brand">
+			<div id="brand-ad">
+				You are lucky for playing my little game!
+			</div>
+			<div id="brand-con">
+				<button id="start">start</button>
+				<button id="stop">stop</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		var direction = 'right';
+		var oGround = document.getElementById('ground');
+		var timer = null;
+		var food;
+		//create the snake
+
+		var snake = [];
+		for(var i=0;i<3;i++)
+		{
+			var oDiv = document.createElement('div');
+			oDiv.className = 'block snake-block';
+			oDiv.style.left = (3-i)*20 + 'px';//let the head of the snake be number one
+			oGround.appendChild(oDiv);
+			snake.push(oDiv);
+		}
+
+		//create the food
+		function createFood(){
+		do{
+			var flag =1;
+			var ileft = parseInt(Math.random()*50)*20;
+		    var itop = parseInt(Math.random()*25)*20;
+			for(var i=0;i<snake.lenght;i++)
+			{
+				if(ileft==snake[i].offsetLeft &&itop == snake[i].offsetTop)
+				{
+					flag=0;
+				}
+			}
+
+		}while(!flag);
+	    food = document.createElement('div');
+		food.className = 'block food';
+		food.style.left = ileft + 'px';
+		food.style.top = itop + 'px';
+		oGround.appendChild(food);
+		}
+        createFood();
+		//move
+
+		var oStart = document.getElementById('start');
+		oStart.onclick = function(){
+			timer = setInterval(function(){
+				move();
+			},500);
+		};
+		function move(){
+			var nextpos = null;
+			var snakehead = snake[0];//the head 
+			if(direction == 'right'){
+				nextpos ={
+            		ileft:snakehead.offsetLeft + 20,
+            		itop:snakehead.offsetTop
+            	};
+			}else if(direction == 'left'){
+				nextpos ={
+            		ileft:snakehead.offsetLeft - 20,
+            		itop:snakehead.offsetTop
+            	};
+			}else if(direction == 'top'){
+				nextpos ={
+            		ileft:snakehead.offsetLeft,
+            		itop:snakehead.offsetTop - 20
+            	};
+			}else if(direction == 'down'){
+				nextpos ={
+            		ileft:snakehead.offsetLeft,
+            		itop:snakehead.offsetTop + 20
+            	};
+			}
+
+			//eat tht food
+			 if(nextpos.ileft == food.offsetLeft && nextpos.itop == food.offsetTop){
+			 	food.className = 'block snake-block';
+				food.style.left = snakehead.offsetLeft + 'px';
+				food.style.top = snakehead.offsetTop + 'px'; 
+				snakehead.style.left = nextpos.ileft + 'px';
+				snakehead.style.top = nextpos.itop + 'px';
+			 	snake.splice(1,0,food);
+			 	createFood();
+			}else{//grow
+				for(var i=0;i<snake.length;i++)//60 40 20
+				{	
+					 var nowpos ={
+						ileft:snake[i].offsetLeft,
+						itop:snake[i].offsetTop
+					};
+					snake[i].style.left =nextpos.ileft + 'px';
+					snake[i].style.top =nextpos.itop + 'px';
+					nextpos = nowpos;
+				}	
+			 //judge if eat yourself
+			 if(snake.length>4){
+			 for(var i =4;i<snake.length;i++){
+        	 if(snake[i].offsetLeft == snakehead.offsetLeft &&snake[i].offsetTop ==snakehead.offsetTop){
+        		alert('Game over!');
+				clearInterval(timer);
+        		}
+             }
+        }
+
+
+        //judge if crash the wall
+	         for(var i =0;i<snake.length;i++){
+	        	if(snake[i].offsetLeft<0 || snake[i].offsetLeft > 980 || snake[i].offsetTop < 0 || snake[i].offsetTop >480)
+	        	{
+	        		console.log(snake[i].offsetTop);
+	        		console.log(i);
+	        		console.log(snake[i].offsetLeft);
+	        		alert('Game over!');
+					clearInterval(timer);
+				}
+	        		
+	         }	
+		}
+       
+        
+
+		//bind the keydown for the documnet
+
+		document.onkeydown = function(e){
+			e = e || window.event;
+			var keyCode = e.which || e.keyCode;
+			if(keyCode == 37 && direction != 'right'){
+				direction = 'left';
+			}else if(keyCode == 38 && direction != 'down'){
+				direction = 'top';
+			}else if(keyCode == 39 && direction != 'left'){
+				direction = 'right';
+		    }else if(keyCode == 40 && direction != 'top'){
+		    	direction = 'down';
+		    }
+		    move();
+		}
+		
+
+
+
+
+		//grow
+	</script>
+</body>
+</html>

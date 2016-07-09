@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#stage{
+			width: 1000px;
+			height: 400px;
+			background: #ccc;
+			border-radius: 3px;
+			box-shadow: 0 0 2px 1px rgba(0,0,0,0.5);
+			margin: 50px auto;
+			/*overflow: hidden;*/
+			-webkit-perspective: 800px;
+			-webkit-perspective-origin: 50% -30%;
+		}
+		#container{
+			width: 128px;
+			height: 100px;
+			position: absolute;
+			left: 50%;
+			margin-left: -64px;
+			top: 80px;
+			-webkit-transform-style: preserve-3d;
+			-webkit-transition: transform 1s ease-in;
+		}
+		#container img{
+			position: absolute;
+			-webkit-transition: transform 1s ease-in;
+
+
+		}
+	</style>
+</head>
+<body>
+	<div id="stage">
+		<div id="container">
+			
+		</div>
+	</div>
+	<script>
+	    (function(){
+	    	var oContainer = document.getElementById('container');
+		var html = '';
+		for(var i=0; i<9; i++){
+			html += '<img src="images/mm'+(i+1)+'.jpg" />';
+		}
+		oContainer.innerHTML = html;
+		var aImg = document.getElementsByTagName('img');
+		for(var i=0;i<9;i++)
+		{
+			(function(index){
+				setTimeout(function(){
+				aImg[index].style.WebkitTransform = 'rotateY('+(index*40)+'deg) translateZ(190px);';
+				aImg[index].style.MozTransform = 'rotateY('+index*40+'deg) translateZ(190px)';
+				aImg[index].style.MsTransform = 'rotateY('+index*40+'deg) translateZ(190px)';
+				aImg[index].style.transform = 'rotateY('+index*40+'deg) translateZ(190px)';
+
+			},100*(9-i));
+			})(i);
+		}
+		var index = 0;
+			oContainer.onclick = function(){
+				index++;
+				this.style.WebkitTransform = 'rotateY('+(-index*40)+'deg)';
+			};
+	    })();
+		
+	</script>
+</body>
+</html>

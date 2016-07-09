@@ -1,0 +1,44 @@
+
+#container{
+	width: 1000px;
+	height: 550px;
+	position: relative;
+	// top: 30px;
+	margin: 0 auto;
+	border: 1px solid #000;
+	// background: #ccc;
+}
+#ground{
+	width: 1000px;
+	height: 500px;
+	position: relative;
+	margin: 0 auto;
+	background: pink;
+}
+#brand{
+	height: 50px;
+	width: 1000px;
+	line-height: 50px;
+}
+#brand-ad{
+	float: left;
+}
+#brand-con{
+	position: absolute;
+	right: 20px;
+	float: right;
+}
+.block{
+	height: 20px;
+	width: 20px;
+	float: left;
+}
+.snake-block{
+	background: red;
+	position: absolute;
+	top: 60px;	
+}
+.food{
+	background: green;
+	position: absolute;
+}
