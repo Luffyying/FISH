@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>照片墙</title>
+    <style>
+        body{
+            background: #eee;
+        }
+        .container img{
+            width: 200px;
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            -webkit-box-shadow: 2px 2px 1px rgba(50,50,50,0.4);
+            -webkit-transition: all 1s ease;
+            transition: all 1s ease;
+            position: absolute;
+        }
+        .container img:nth-child(1){
+            -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+        }
+        .container img:nth-child(2){
+            -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg) ;
+            left: 70px;
+            /*z-index: 1;*/
+        }
+        .container img:hover{
+            -webkit-transform: rotate(0deg) scale(1.2);
+            transform: rotate(0deg) scale(1.2);
+            -webkit-box-shadow: 10px 10px 5px rgba(50,50,50,0.4);
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img class="pic pic1" src="img/1.jpg">
+    <img class="pic pic2" src="img/2.jpg">
+    <!--<img class="pic pic3" src="img/3.jpg">-->
+    <!--<img class="pic pic4" src="img/4.jpg">-->
+    <!--<img class="pic pic5" src="img/5.jpg">-->
+    <!--<img class="pic pic6" src="img/6.jpg">-->
+    <!--<img class="pic pic7" src="img/7.jpg">-->
+    <!--<img class="pic pic8" src="img/8.jpg">-->
+    <!--<img class="pic pic9" src="img/9.jpg">-->
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个性旋转按钮</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #container {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        #home {
+            position: absolute;
+            -webkit-transition: all 1s ease;
+        }
+
+        #menu li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transition: all 1s ease;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="menu">
+        <li><img src="img/close.png" alt=""/></li>
+        <li><img src="img/full.png" alt=""/></li>
+        <li><img src="img/open.png" alt=""/></li>
+        <li><img src="img/prev.png" alt=""/></li>
+        <li><img src="img/refresh.png" alt=""/></li>
+    </ul>
+    <div id="home">
+        <img src="img/home.png" alt=""/>
+    </div>
+</div>
+<script>
+    var oHome = document.getElementById('home');
+    var oMenu = document.getElementById('menu');
+    var aMenu = oMenu.getElementsByTagName('li');
+
+    var bFlag = true;
+    oHome.onclick = function () {
+        if (bFlag) {
+            this.style.WebkitTransform = 'rotate(-360deg)';
+            for (var i = 0; i < aMenu.length; i++) {
+                aMenu[i].style.WebkitTransitionDuration = '1s';
+                aMenu[i].style.left = -150 * Math.sin(i * 90 / 4 * (Math.PI / 180)) + 'px';
+                aMenu[i].style.top = -150 * Math.cos(i * 90 / 4 * (Math.PI / 180)) + 'px';
+                aMenu[i].style.WebkitTransform = 'rotate(-360deg) scale(1)';
+                aMenu[i].style.WebkitTransitionDelay = '0.' + i + 's';
+            }
+
+        } else {
+            this.style.WebkitTransform = 'rotate(0deg)';
+            for (var i = 0; i < aMenu.length; i++) {
+                aMenu[i].style.WebkitTransitionDuration = '1s';
+                aMenu[i].style.left = 0;
+                aMenu[i].style.top = 0;
+                aMenu[i].style.WebkitTransform = 'rotate(0deg) scale(1)';
+                aMenu[i].style.WebkitTransitionDelay = '0.' + (4 - i) + 's';
+            }
+        }
+        bFlag = !bFlag;
+    };
+
+    var fn = function () {
+        this.style.WebkitTransitionDuration = '0.1s';
+        this.style.WebkitTransform = 'rotate(-360deg) scale(1)';
+        this.style.opacity = 1;
+        this.removeEventListener('webkitTransitionEnd', fn, false);
+    };
+    for (var i = 0; i < aMenu.length; i++) {
+
+            aMenu[i].onclick = function () {
+                this.style.WebkitTransitionDuration = '0.3s';
+                this.style.WebkitTransform = 'rotate(-360deg) scale(2)';
+                this.style.opacity = 0.1;
+                this.addEventListener('webkitTransitionEnd', fn, false);
+            };
+
+    }
+
+
+</script>
+</body>
+</html>
