@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="hello.txt">hello ajax</a>
+	<script>
+		window.onload = function(){
+			document.getElementsByTagName('a')[0].onclick = function(){
+				//create a XMLHttpRequest object
+				var re = new XMLHttpRequest();
+				console.log(re);
+				//prepare the date you want to request
+				var url = this.href;
+				var method = 'GET';
+				//open
+				re.open(method,url);
+				//send
+				re.send(null);
+				//add the function onreadystatechange
+				re.onreadystatechange = function(){
+					//judge the response is finish --->readyState = 4
+					if(re.readyState == 4){
+						//judge it is available
+						if(re.status == 200 || re.status == 304){
+							//print the result
+							alert(re.responseText);
+							
+						}
+					}
+				}
+				return false;//cancel the default behavior
+			}
+		}
+	</script>
+</body>
+</html>

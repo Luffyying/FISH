@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="ha.html">HelloAjax</a>
+	<div id="content">
+		
+	</div>
+	<script src="jquery-1.12.2.js"></script>
+	<script>
+		$(function(){
+			$('a').click(function(){
+				//use the function of load
+				var url = this.href + " h1";
+				var args = {"time":new Date()};
+				$('#content').load(url,args);
+				return false;
+			});
+		});	
+	</script>
+</body>
+</html>
