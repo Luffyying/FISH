@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.aa{
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div id='app'></div>
+	<script type='text/babel'>
+		var SubMessagebox = React.createClass({
+			render : function(){
+			      return (
+			      	<div>
+				         <div>Submessagebox </div>
+				         <p>{this.props.a}</p>
+			        </div>
+			      );
+			}
+		});
+		var Messagebox = React.createClass({
+			render : function(){
+			      var a='5';
+			      return (
+			         <div>Mymessagebox
+			         	<SubMessagebox a={a}/>
+			         </div>
+			      );
+			}
+		});
+		ReactDOM.render(
+		<div>
+			<Messagebox />
+		</div>,
+		document.getElementById('app'));
+	</script>
+	<script src='react-0.14.7/build/react.js'></script>
+	<script src='react-0.14.7/build/react-dom.js'></script>
+	<script src='browser.js'></script>
+
+</body>
+</html>
