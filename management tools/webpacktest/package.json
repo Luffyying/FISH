@@ -1,0 +1,16 @@
+{
+  "name": "sdf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "css-loader": "^0.24.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  }
+}
