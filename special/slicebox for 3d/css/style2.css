@@ -131,30 +131,30 @@
 
 		}
 		.n4{
-			background-image: url(1.jpg);
+			background-image: url(../imgs/1.jpg);
 			-webkit-transform: rotateY(180deg)  scale3d(1.2,1.2,1.2) translateZ(200px);
 		}
 		.n3{
-			background-image: url(2.jpg);
+			background-image: url(../imgs/2.jpg);
 			-webkit-transform: rotateY(90deg) scale3d(1.2,1.2,1.2) translateZ(60px) ;
 		}
 		.n5{
-			background-image: url(3.jpg);
+			background-image: url(../imgs/3.jpg);
 			-webkit-transform: rotateY(-90deg) scale3d(1.2,1.2,1.2) translateZ(60px) ;
 
 		}
 		.n1{
-			background-image: url(4.jpg);
+			background-image: url(../imgs/4.jpg);
 			-webkit-transform: rotateX(90deg) scale3d(1.2,1.2,1.2) translateZ(200px) ;
 
 		}
 		.n6{
-			background-image: url(5.jpg);
+			background-image: url(../imgs/5.jpg);
 			-webkit-transform: rotateX(-90deg) scale3d(1.2,1.2,1.2) translateZ(200px);
 
 		}
 		.n2{
-			background-image: url(6.jpg);
+			background-image: url(../imgs/6.jpg);
 			-webkit-transform: scale3d(1.2,1.2,1.2) translateZ(200px);
 
 		}

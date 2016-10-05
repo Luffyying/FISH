@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="#" method="get">
+		<select name="province" id="" onchange='turn()'>
+			<option value="0" selected="selected" >请选择省份</option>
+		</select>
+		<select name="city" id="">
+			<option value="0" selected="selected">请选择城市</option>
+		</select>
+	</form>
+	<script>
+	   
+		var cityList = new Array();
+		var pros =new Array();
+		pros=['黑龙江','浙江'];
+		cityList['黑龙江']=['请选择城市','哈尔滨','大庆'];
+		cityList['浙江']=['请选择城市','杭州','宁波','绍兴'];
+		var city=document.forms[0].city;
+		var province = document.forms[0].province;
+		for(var i in pros){
+			newOption =new Option(pros[i],pros[i]);
+			province.options.add(newOption);
+		}
+		 function turn(){
+			var index = document.forms[0].province.value;
+			city.options.length =0;
+			for(var j in cityList[index]){
+				newOption =new Option(cityList[index][j],cityList[index][j]);
+				city.options.add(newOption);
+			}
+	}
+	</script>
+</body>
+</html>
