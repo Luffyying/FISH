@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jquery.js'></script>
+	<link rel="stylesheet" href="jquery.range.css">
+	<script src='jquery.range.js'></script>
+	<style>
+		.demo{width:600px; margin:60px auto 10px auto}
+
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<input type="hidden" class="single-slider" value="23" />
+	</div>
+	<script>
+		$('.single-slider').jRange({
+		from: 0,
+		to: 100,
+		step: 1,
+		scale: [0,25,50,75,100],
+		format: '%s',
+		width: 300,
+		showLabels: true,
+		showScale: true
+	});
+	</script>
+</body>
+</html>
