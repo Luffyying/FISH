@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+    <div ng-app=''>
+    	<p><input type="text" ng-model='name'></p>
+		<h1>{{name}}</h1>
+		<div ng-init="firstName='John'">
+		<p>姓名为 <span ng-bind="firstName"></span></p>
+		</div>
+    </div>
+
+	<script src='angular.js'></script>
+</body>
+</html>

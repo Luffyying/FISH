@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-repeat</title>
+</head>
+<body>
+	<div ng-app='app1' ng-controller='con1'>
+    	<input type="text" ng-model='age'>
+		<h1>{{age}}</h1>
+		<ul>
+			<li ng-repeat="val in names" ng-bind='val'></li>
+		</ul>
+    </div>
+	<script src='angular.js'></script>
+	<script>
+		var app1 = angular.module('app1',[]);
+		app1.controller('con1',function($scope){
+			$scope.names=['li','pang','xin'];
+		});
+	</script>
+</body>
+</html>

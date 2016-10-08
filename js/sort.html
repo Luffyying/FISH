@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="num">
+		<li class="n">2</li>
+		<li class="n">4</li>
+		<li class="n">6</li>
+		<li class="n">0</li>
+		<li class="n">1</li>
+	</ul>
+	<script src='jquery.js'></script>
+	<script>
+		$(function(){
+			var arr = $('.n');
+			arr.sort(function(a,b){
+				return a.innerHTML>b.innerHTML?1:-1;
+			});
+			$('#num').empty().append(arr);
+		})
+	</script>
+</body>
+</html>
