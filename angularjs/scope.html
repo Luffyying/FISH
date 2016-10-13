@@ -36,6 +36,14 @@
 		angular.bootstrap(document.getElementById('test'),['test']);
 		// 由结果可以看出来，$rootScope.name设置的变量，在所有controller里面都是可以直接用{{$root.name}}来显示的，很强大。那当然也可以赋值给scope.两者类似于js中的原型链，$rootscope是最顶端的，他是所有scope的祖先
 		//$rootscope是在angular启动流程中建立的，而被注入到controller中的$scope则是在视图创建的时候通过父辈的$scope.$new制造出来的，在视图销毁的时候，$scope会被跟着销毁。$scope是链接视图和controller的重要手段，controller则是可以与服务进行链接，将服务提供的功能进行组合，然后丢给$scope,$scope则将这些传递给视图，让它显示给用户。
+		function Person(name,age,sex){
+			var person={};
+			person.name = name;
+			person.age = age;
+			person.sex = sex;
+			//无需返回值
+		}
+		var p= new Person('luffy','18','男');
 	</script>
 </body>
 </html>
