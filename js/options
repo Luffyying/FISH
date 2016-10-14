@@ -9,7 +9,7 @@
 										<option value="0" selected="selected">请选择城市</option>
 								</select>
 </div>
-//js                    
+//controller                   
 $(function(){
 				$.get('welcome/city',{},function(data){
 					//console.log(data);
@@ -35,3 +35,28 @@ $(function(){
 7	金华	2
 8	杭州	2
 9	抚顺	3
+//js
+                            $(function(){
+				$.get('welcome/city',{},function(data){
+					for(i=0;i<data.length;i++){
+					newoption = new Option(data[i].name,data[i].id);
+					$("select[name='province']")[0].options.add(newoption);
+				}
+				},'json');
+
+			})
+			function turn(){
+				    $("select[name='city']")[0].options.length =0;
+				    if($('.pro option:selected').val()=='请选择省份'){
+				    	newoption = new Option('请选择城市','请选择城市');
+						$("select[name='city']")[0].options.add(newoption);
+				    }else{
+					$.get('welcome/street',{id:$('.pro option:selected').val()},function(data){
+						
+						for(i=0;i<data.length;i++){
+						newoption = new Option(data[i].name,data[i].id);
+						$("select[name='city']")[0].options.add(newoption);
+						}
+					},'json')
+				}
+				}
