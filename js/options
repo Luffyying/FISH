@@ -1,0 +1,37 @@
+//use the database to come true the  Multistage tandem
+
+
+//html
+ <div class='list' style='margin-top: 10px'>位置&nbsp&nbsp&nbsp
+	  				    <select style='width: 110px' class='sel pro' name="province" id="" onchange='turn()'>
+									<option value="0" selected="selected" >请选择省份</option>
+								</select>-<select style='width: 110px' class='sel cit' name="city" id="">
+										<option value="0" selected="selected">请选择城市</option>
+								</select>
+</div>
+//js                    
+$(function(){
+				$.get('welcome/city',{},function(data){
+					//console.log(data);
+					for(i=0;i<data.length;i++){
+					newoption = new Option(data[i].name,data[i].id);
+					$("select[name='province']")[0].options.add(newoption);
+				}
+				},'json');
+
+			})
+			function turn(){
+					$.get('welcome/street',{id:$('.pro option:selected').val()},function(data){
+						console.log(data);
+					},'json')
+				}
+//database table
+1	黑龙江	0
+2	浙江	0
+3	辽宁	0
+4	大庆	1
+5	哈尔滨	1
+6	大连	3
+7	金华	2
+8	杭州	2
+9	抚顺	3
