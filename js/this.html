@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function A(){
+          console.log(this);
+		}
+		var b = new A();
+		b.name='heil';
+		console.log(b);
+		console.log(this);
+	</script>
+</body>
+</html>
