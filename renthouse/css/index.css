@@ -1,0 +1,120 @@
+#background{
+    background: url(../img/index_bg.png) no-repeat 50% 50%;
+    -webkit-background-size: cover;
+    min-height: 650px;
+    position: relative;
+}
+#background .logo{
+    position: absolute;
+    top: 144px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#background .content{
+    width: 72%;
+    height: 135px;
+    background: #ffffff;
+    margin: 0 auto;
+    margin-top: 250px;
+    position: relative;
+}
+#background .content .content-wrapper{
+    width: 88%;
+    height: 55px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+#position{
+    width: 21%;
+    height: 54px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+}
+#position .position-wrapper{
+    width: 85%;
+    height: 17px;
+    margin: 16px auto;
+    position: relative;
+}
+#position .position-wrapper span{
+    font-size: 17px;
+}
+#position .position-wrapper .text{
+    font-size: 17px;
+    position: absolute;
+    left: 40%;
+    top: 0;
+}
+#position .position-wrapper .caret{
+    float: right;
+    margin-top: 5px;
+    border-top: 10px solid #ccc;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    cursor: pointer;
+}
+#position-menu-wrapper{
+    width: 21%;
+    height: 200px;
+    margin-top: 1px;
+    background: #f7f7f7;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    font-size: 17px;
+    display: none;
+    overflow-y: scroll;
+}
+#position-menu-wrapper .Franch{
+    float: left;
+    width: 40%;
+    height: 42px;
+    background: #fff;
+    text-align: center;
+    line-height: 42px;
+}
+#position-menu-wrapper .menu-wrapper{
+    float: right;
+    width: 60%;
+    /*height: 100%;*/
+    background: #fff;
+}
+.menu-wrapper .menu{
+    background: #fff;
+    padding-top: 8px;
+}
+.menu-wrapper .menu li{
+    width: 100%;
+    height: 33px;
+    text-align: center;
+    line-height: 33px;
+    cursor: pointer;
+}
+.menu-wrapper .menu li:hover{
+    background: #f7f7f7;
+}
+#background .content-wrapper input{
+    width: 50%;
+    height: 55px;
+    background: #fff;
+    padding: 0 13px;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    position: absolute;
+    left: 25%;
+    top: 0;
+}
+#background .content-wrapper button{
+    width: 19%;
+    height: 55px;
+    font-size: 19px;
+    background: #6dbd20;
+    text-align: center;
+    line-height: 55px;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+}

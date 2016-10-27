@@ -1,0 +1,110 @@
+#evaluate{
+    height: 853px;
+}
+#evaluate .row{
+    padding-left: 40px;
+    padding-top: 20px;
+}
+#evaluate .first-row{
+    border-bottom: 1px solid #d8d8d8;
+}
+#evaluate .row-left .space{
+    padding: 5px 20px;
+    color: #949494;
+}
+#evaluate .row-left .content{
+    color: #444444;
+}
+#evaluate .row-left .comment{
+    padding: 15px;
+}
+#evaluate .row-left h3{
+    font-weight: bold;
+}
+#evaluate ul.rating{
+    overflow:hidden;
+    width:80px;
+    height:16px;
+    padding:0;
+    list-style:none;
+    clear:both;
+    position:relative;
+    background: url(../img/star-matrix.gif) no-repeat 0 0;
+}
+#evaluate ul.no-star {background-position:0 0}
+#evaluate ul.one-star {background-position:0 -16px}
+#evaluate ul.two-star {background-position:0 -32px}
+#evaluate ul.three-star {background-position:0 -48px}
+#evaluate ul.four-star {background-position:0 -64px}
+#evaluate ul.five-star {background-position:0 -80px}
+#evaluate .row .rating li {
+    cursor: pointer;
+    float:left;
+    text-indent: -999em;
+}
+#evaluate .row .rating li a{
+    position:absolute;
+    left:0;
+    top:0;
+    width:16px;
+    height:16px;
+    text-decoration:none;
+    z-index: 200;
+}
+#evaluate .row .rating li.one a {left:0}
+#evaluate .row .rating li.two a {left:16px;}
+#evaluate .row .rating li.three a {left:32px;}
+#evaluate .row .rating li.four a {left:48px;}
+#evaluate .row .rating li.five a {left:64px;}
+#evaluate .row .rating li a:hover {
+    z-index: 2;
+    width:80px;
+    height:16px;
+    overflow:hidden;
+    left:0;
+    background: url(../img/star-matrix.gif) no-repeat 0 0;
+}
+#evaluate .row .rating li.one a:hover {background-position:0 -96px;}
+#evaluate .row .rating li.two a:hover {background-position:0 -112px;}
+#evaluate .row .rating li.three a:hover {background-position:0 -128px;}
+#evaluate .row .rating li.four a:hover {background-position:0 -144px;}
+#evaluate .row .rating li.five a:hover {background-position:0 -160px;}
+textarea::-webkit-input-placeholder {
+    outline: none;
+    color: #c3c3c3;
+}
+textarea:-moz-placeholder {
+    outline: none;
+    color: #c3c3c3;
+}
+#evaluate .row .choose{
+    width: 98px;
+    height: 98px;
+    border: 1px solid #c4c4c4;
+    cursor: pointer;
+    text-align: center;
+    line-height: 98px;
+    font-size: 30px;
+}
+#evaluate .row #imgTwo{
+    margin-top: 5px;
+}
+#evaluate .row #imgThree{
+    line-height: 34px;
+}
+#evaluate .row .number{
+    margin-top: 71px;
+}
+#evaluate .row .submit{
+    width: 105px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: #6dbd20;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #6dbd20;
+}
+#evaluate .row-right{
+    padding-left: 70px;
+}

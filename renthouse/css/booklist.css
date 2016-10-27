@@ -1,0 +1,145 @@
+#status-bar{
+    margin-top: 30px;
+}
+
+#status-btn li{
+    float: left;
+    display: inline-block;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    /*background-color: #f5f5f5;*/
+    /*border: 1px solid #c4c4c4;*/
+    margin-right: 10px;
+    cursor: pointer;
+    color: #6fbb30;
+    background-color: #fff;
+    border: 1px solid #6fbb30;
+
+}
+#status-btn .current{
+    background-color: #6fbb30;
+    color: #fff;
+    /*border: 1px solid #6fbb30;*/
+}
+
+ .booklist-ul{
+    border-bottom: 1px solid #c4c4c4;
+    /*margin: 50px 0;*/
+    padding: 40px 0 20px;
+}
+ .book-ul{
+    margin-left: 30px;
+    margin-bottom: 0;
+}
+
+ .book-info{
+    height: 35px;
+    background-color: #f5f5f5;
+    border: 1px solid #c4c4c4;
+}
+ .book-info span{
+    line-height: 35px;
+    color: #777777;
+}
+.house-img{
+    width: 210px;
+    height: 250px;
+    /*overflow: hidden;*/
+}
+.house-img img{
+    width: 210px;
+    height: 250px;
+    /*position: relative;*/
+}
+.house-title{
+    margin-top: 15px;
+    text-align: center;
+}
+.user-img{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.user-img img{
+    height: 200px;
+    width: 120px;
+}
+.user-name{
+    text-align: center;
+    margin-top: 20px;
+}
+.book-desc{
+    margin: 30px 0;
+}
+.user-hobby{
+    margin: 10px 0 10px 20px;
+}
+.user-hobby li{
+    width: 40px;
+    float: left;
+    margin-right: 20px;
+}
+.user-hobby li span{
+    display: block;
+    text-align: center;
+}
+.user-hobby i{
+    font-size: 40px;
+    float: left;
+}
+.book-status{
+    text-align: right;
+}
+.status-btn{
+    line-height: 34px;
+    text-align: center;
+    height: 34px;
+    border: 1px solid #6fbb30;
+    display: inline-block;
+    margin-right: 20px;
+
+}
+.status-type1{
+    color: #fff;
+    background-color: #6fbb30;
+    cursor: pointer;
+    padding: 0 20px;
+}
+.status-type2{
+     color: #6fbb30;
+     background-color: #fff;
+     cursor: pointer;
+     padding: 0 20px;
+}
+.status-type3{
+    color: #6fbb30;
+    border: none;
+    /*padding: 0 10px;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

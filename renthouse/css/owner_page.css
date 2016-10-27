@@ -1,0 +1,201 @@
+/*公共样式开始*/
+html{
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+}
+.clearfix:after{
+    display: block;
+    clear: both;
+    content: "." ;
+    height: 0 ;
+    visibility: hidden ;
+}
+a:hover{
+    text-decoration: none;
+}
+/*公共样式结束*/
+.wrapper{
+    margin-top: 26px;
+}
+#sidebar{
+    padding-left: 30px;
+}
+.house-info h2{
+    font-size: 1.5rem;
+    font-weight: normal;
+    word-spacing: 6px;
+    padding-bottom: 8px;
+    position: relative;
+}
+.house-info hr{
+    margin: 0;
+}
+.house-info h2 span{
+    font-size: 1rem;
+    color: rgb(156,156,156);
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.house-info p{
+    color: rgb(156,156,156);
+    font-size: 0.875rem;
+    margin-top: 20px;
+}
+.amenities-list li{
+    float: left;
+}
+#intro{
+    margin-top: 30px;
+    padding: 30px 20px 30px 30px;
+    background: rgb(245,245,245);
+}
+#intro h3{
+    float: left;
+    font-size: 0.875rem;
+    color: rgb(156,156,156);
+    font-weight: normal;
+}
+#intro p{
+    font-size: 0.875rem;
+    line-height: 22px;
+}
+#grade{
+    height: 55px;
+    margin-top: 20px;
+    line-height: 55px;
+    border-top: 2px solid rgb(194,194,194);
+    border-bottom: 2px solid rgb(194,194,194);
+}
+#grade div:nth-child(2n){
+    text-align: center;
+}
+#grade div:last-child{
+    text-align: right;
+}
+#comment{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(194,194,194);
+    margin-bottom: 40px;
+}
+#commenter{
+    text-align: center;
+}
+#commenter-avatar{
+    width: 75px;
+    height: 75px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+#commenter div:last-child{
+    margin-top: 10px;
+}
+#comment-right p{
+    line-height: 26px;
+}
+#comment-right ul{
+    height: 65px;
+    margin-top: 10px;
+}
+#comment-right ul li{
+    float: left;
+    margin-right: 16px;
+    width: 100px;
+    height: 65px;
+}
+#comment-right ul li:last-child{
+    line-height: 100px;
+}
+#owner-title{
+    height: 40px;
+    background: rgb(72,72,72);
+    text-align: center;
+    line-height: 40px;
+    font-size: 1rem;
+    color: #fff;
+}
+#owner-info{
+    margin-top: 20px;
+    padding: 0 16px;
+}
+#owner-avatar{
+    width: 96px;
+    height: 96px;
+    border-radius: 100px;
+    overflow: hidden;
+    float: left;
+    margin-right: 20px;
+}
+#owner-name p:last-child{
+    color: rgb(156,156,156);
+}
+#owner-intro h4{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#owner-intro p{
+    color: rgb(156,156,156);
+}
+#remarks{
+    margin-top: 25px;
+}
+#remarks-title{
+    height: 40px;
+    padding: 0 16px;
+    line-height: 40px;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 2px;
+    background: rgb(72,72,72);
+}
+#remarks-title a{
+    float: right;
+    color: #fff;
+}
+#remarks h3 span{
+    margin: 0 100px 0 20px;
+}
+#remarks h3 a{
+    color: #fff;
+}
+#remark-grade{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+#remark-grade ul{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+#lessee-info{
+    float: left;
+    margin-right:10px;
+    text-align: center;
+}
+#lessee-avatar{
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.remark{
+    padding: 0 10px;
+}
+.remark hr{
+    margin-bottom: 10px;
+}
+
+
+
+

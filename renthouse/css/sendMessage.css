@@ -1,0 +1,155 @@
+#message{
+	width: 1279px;
+	position: relative;
+}
+.nav{
+	height: 40px;
+	background: #484848;
+	margin-bottom: 15px;
+}
+.heart{
+	color: red;
+}
+.nav .row div{
+	margin: 0 auto;
+	text-align: center;
+	height: 40px;
+	padding: 0;
+}
+.nav .row div a{
+	color: #ffffff;
+	font-size: 14px;
+	line-height: 40px;
+	margin: 0 auto;
+	text-align: center;
+	width:100%;
+	text-decoration: none;
+
+}
+.nav .row div a:hover{
+	cursor: pointer;
+}
+.nav .rec{
+	left:10%;
+	position: absolute;
+	text-align: center;
+}
+.nav div .shadow{
+	display:block;
+	width:100%;
+	height: 5px;
+	background: #bbbbbb;
+	position: absolute;
+	bottom: 0;
+}
+.nav .send{
+	left:35%;
+	position: absolute;
+	text-align: center;
+}
+.nav .notice{
+	left:65%;
+	position: absolute;
+	text-align: center;
+}
+
+#sidebar img{
+	width: 100%;
+	border: 1px solid #c4c4c4;
+}
+.page{
+	width:100%;
+	height: 85px;
+	position: relative;
+}
+.page_count{
+	position: absolute;
+	top:22px;
+}
+
+
+.search{
+	height: 53px;
+	position: relative;
+
+}
+.search_left{
+	display:block;
+	line-height: 53px;
+	font-size: 16px;
+	font-weight: bold;
+	position: absolute;
+	left:3%;
+}
+.search_center{
+	line-height: 53px;
+	height: 33px;
+	border: 1px solid #c4c4c4;
+	background: #eaeaea;
+	text-align: center;
+	position: absolute;
+	left:30%;
+	top:10px;
+}
+.search_right{
+	line-height: 33px;
+	height: 33px;
+	background: #ffffff;
+	border: 1px solid #c4c4c4;
+	text-align: center;
+	color: #696868;
+	font-size: 16px;
+	position: absolute;
+	left:80%;
+	top:10px;
+}
+.title{
+	color: #818080;
+	height: 41px;
+	line-height: 41px;
+	position: relative;
+}
+.title .title_from{
+	top:10px;
+}
+#contentList li{
+	padding-top: 15px;
+}
+
+.content{
+	font-size: 14px;
+}
+.content textarea{
+	width: 100%;
+}
+.content .content_from{
+}
+.content_from_title{
+}
+
+.content .content_cont{
+}
+.content .content_date{
+}
+.content_opt{
+	width:75%;
+	height: 32px;
+	color: #ffffff;
+	background: #6dbd20;
+	line-height: 32px;
+	margin-bottom: 25px;
+	border:1px solid #64ff8c;
+}
+.rep{
+	color: #ffffff;
+	background: #6dbd20;
+}
+.del{
+	color: #6dbd20 ;
+	background:#ffffff;
+}
+
+
+
+
+

@@ -1,0 +1,57 @@
+#status-bar{
+    margin: 30px 0 30px;
+}
+.book-li{
+    border-bottom: 1px solid #c4c4c4;
+    margin-bottom: 20px;
+}
+.book-ul{
+    margin-bottom: 10px;
+}
+.house-title{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 10px;
+    padding: 0;
+}
+.house-price{
+    margin-top: 10px;
+    text-align: right;
+
+}
+/*.book-desc p:not(.house-title){*/
+.book-desc p{
+    /*margin-left: 10px;*/
+}
+.book-desc{
+    margin-top: 10px;
+
+}
+.book-status{
+    padding-bottom: 10px;
+    /*border-bottom: 1px solid #c4c4c4;*/
+}
+.book-desc-content{
+    padding: 0 30px 20px;
+}
+.book-info{
+    border: none;
+}
+.book-desc-content-hide{
+    padding: 30px 50px 0;
+    border-top: 1px solid #c4c4c4;
+
+
+}
+.book-desc{
+    margin-bottom: 10px;
+}
+.user-comment a{
+    color: #fff;
+    width: 100%;
+    height: 100%;
+}
+.user-comment a:hover, a:focus {
+    text-decoration: none;
+}

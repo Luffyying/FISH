@@ -1,0 +1,123 @@
+.dialog-box{
+    background: #FFFFFF;
+    overflow: scroll;
+}
+.title, .again-title{
+    width: 450px;
+    height: 70px;
+    background: #39589a;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 70px;
+    text-align: center;
+}
+#complaint-content{
+    padding: 28px 32px 15px 32px;
+    width: 386px;
+    height: 477px;
+    background: #FFFFFF;
+}
+.complaint-content-items{
+    width: 386px;
+    /*height: 109px;*/
+}
+.complaint-content-items :after{
+    clear:both;
+    content:'.';
+    display:block;
+    width: 0;
+    height: 0;
+    visibility:hidden;
+}
+.complaint-content-info{
+    float: left;
+    /*height: 109px;*/
+    width: 285px;
+    padding-right: 50px;
+}
+.complaint-content-info span{
+    display: inline-block;
+}
+.complaint-content-info p{
+    font-size: 16px;
+    font-weight: 600;
+    color:#6b6c6a ;
+    padding-right: 8px;
+    padding-bottom: 10px;
+}
+.user-img{
+    float: right;
+    width: 97px;
+    height: 97px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user-img-content{
+    width: 100%;
+    height: 100%;
+}
+.show-complaint-info{
+    width: 386px;
+}
+.show-complaint-content{
+    width: 386px;
+    margin-top: 15px;
+}
+
+.show-complaint-info span{
+    width: 386px;
+    /*font-size: 16px;*/
+    /*font-weight: bold;*/
+    /*color: #ff585b;*/
+}
+.show-complaint-info p{
+    margin-top:14px;
+    margin-bottom: 18px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #787977;
+    line-height: 32px;
+}
+.show-complaint-reply{
+    width: 386px;
+}
+#submit-complaint{
+    margin-top: 2px;
+    width:386px;
+    height: 63px;
+    color: #FFFFFF;
+    font-size: 16px;
+    background: #ff585b;
+    text-align: center;
+    line-height: 63px;
+}
+#submit-complaint:hover{
+    cursor: pointer;
+}
+
+/*再次申诉开始*/
+.complaint-again{
+    margin-top: 10px;
+    width: 450px;
+    height: 260px;
+    padding: 0 32px 35px 32px;
+}
+.complaint-content-input-text{
+    margin:40px 0 50px 0;
+    padding: 18px 20px;
+    border: 1px #dddddd solid;
+    width: 385px;
+    height:250px;
+}
+.complaint-again-btn{
+    padding: 0 31px 37px 31px;
+    width: 385px;
+    height: 63px;
+    background: #ff585b;
+    text-align: center;
+    line-height: 63px;
+    color: #FFFFFF;
+}
+.complaint-again:hover{
+    cursor: pointer;
+}

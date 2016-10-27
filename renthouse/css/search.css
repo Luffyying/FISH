@@ -1,0 +1,181 @@
+body{
+	//height: 1407px;
+}
+#myheader{
+	height: 60px;
+	width: 100%;
+	background: pink;
+}
+#myfooter{
+	height: 222px;
+	width: 100%;
+	background: #ccc;
+}
+#content{
+	width: 100%;
+}
+.container{
+	//height: 50%;
+}
+#house li{
+	float: left;
+	height: 290px;
+	width: 331px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	position: relative;
+}
+input[name='bed-num'],input[name='toilet-num'],input[name='room-num']{
+	width:120px;
+}
+#house img{
+	height: 221px;
+	width: 331px;
+	cursor: pointer;
+}
+.top{
+	display: inline-block;
+	padding-top: 10px;
+	font-size: 16px;
+	padding-bottom: 5px;
+}
+.left{
+	margin-left: 5px;
+}
+.bot{
+	margin-bottom: 10px;
+}
+.price{
+	position: absolute;
+	right: 0;
+	top: 170px;
+	width: 120px;
+	height: 36px;
+	background: #ccc;
+	opacity: 0.6;
+	font-size: 16px;
+	text-align: center;
+	color: red;
+	line-height: 36px;
+}
+#search{
+	margin-left: -20px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+#search input{
+	padding: 10px;
+	width: 95px;
+	height: 35px;
+	text-align: center;
+}
+.search-btn, .sure-btn{
+	width: 100%;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	outline: none;
+	border: 0;
+	background: #39589a;
+}
+.sure-btn{
+	margin-bottom: 20px;
+	background: #6dbd20;
+	width: 90%;
+}
+.num{
+	width: 200px;
+}
+.resite-btn{
+	width: 90%;
+	height: 40px;
+	color: #000;
+	font-size: 16px;
+	margin-bottom: 20px;
+	background: #fff;
+	border: 1px solid #ccc;
+}
+#search-add{
+	margin-top: 10px;
+	//border: 1px solid #ccc;
+	margin-left: 0px;
+	width: 100%;
+	text-align: center;
+	display: none;
+}
+.clearfix:after{
+	clear: both;
+	content: '';
+	display: block;
+}
+.k{
+	margin-left: 20px;
+}
+#search-add input{
+	display: inline-block;
+	padding: 10px;
+	text-align: center;
+	width:200px;
+}
+.condition{
+	height: 30px;
+	width: 210px;
+}
+.col-md-4{
+	font-size: 20px;
+}
+.list{
+	margin:15px 0;
+	margin-left: 10px;
+}
+.list li{
+	float: left;
+	margin-right: 20px;
+}
+.list li span{
+	display: block;
+}
+.heart{
+	color: red;
+}
+select{
+	font-size: 16px;
+}
+.newbtn{
+	padding: 7px 50px;
+}
+.sel{
+	height: 36px;
+	width: 110px;
+	font-size: 16px;
+}
+.span-icon{
+	display: inline-block;
+	height: 60px;
+	width: 45px;
+	margin: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+.selected{
+	color:#6dbd20;
+}
+.brank{
+	font-size: 14px;
+}
+.range{
+	width:300px; 
+	height: 20px;
+   
+	margin: 25px auto;
+}
+.price-range{
+	width: 100%;
+	height: 50px;
+	padding: 10px;
+	margin-left: -100px;
+}
+.iconfont-convenient{
+    font-size: 25px;
+}
+

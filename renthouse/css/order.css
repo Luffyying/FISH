@@ -1,0 +1,161 @@
+body{
+    background: #FFFFFF;
+}
+/*编辑区域开始*/
+.box{
+    top:-5px;
+}
+#edit-area{
+    background: #FFFFFF;
+    float: left;
+    padding: 30px 0 0 35px;
+}
+#title1 span{
+    font-family: 微软雅黑;
+    font-size: 20px;
+    color: #696969;
+    display: inline-block;
+    padding-bottom: 28px;
+}
+.edit-area-info-items{
+    margin-bottom: 37px;
+}
+.edit-area-info-items input{
+    border: 1px #c4c4c4 solid;
+    height: 43px;
+    width: 378px;
+    padding:6px 20px;
+}
+.edit-area-info-items label{
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #949494;
+    left: 1px;
+}
+.edit-area-info-items textarea{
+    width: 595px;
+    border: 1px #c4c4c4 solid;
+}
+::-webkit-input-placeholder{
+    color: #bababa;
+    font-size: 16px;
+}
+.edit-area-info-items #sayhi{
+    height:110px;
+    padding: 16px 18px;
+}
+.edit-area-info-items #house-rule{
+    height: 299px;
+    padding:6px 20px;
+}
+.edit-area-button .submit{
+    color: #FFFFFF;
+    border: 1px #c4c4c4 solid;
+    width: 103px;
+    height: 48px;
+    background: #6dbd20;
+    margin-bottom: 30px;
+}
+/*编辑区域结束*/
+
+/*右侧样式开始*/
+#house-info{
+    width: 316px;
+    height: 604px;
+    float: left;
+    border: 1px #dadada solid;
+}
+#house-info-img{
+    height: 120px;
+    width: 100%;
+}
+.house-info-items span{
+    display: inline-block;
+    padding-left: 15px;
+}
+.house-info-owner{
+    font-size: 12px;
+    color: #9c9c9c;
+    padding: 19px 0 15px 21px;
+    font-weight: 600;
+
+}
+.house-info-introduce{
+    font-family: 微软雅黑;
+    font-size: 18px;
+    color: #3d3c3c;
+    width: 250px;
+    padding-bottom: 6px;
+}
+.house-info-message ,.house-info-address{
+    font-size: 12px;
+    color: #9c9c9c;
+    padding-left: 15px;
+    font-weight: 600;
+}
+.house-info-message li{
+    float: left;
+    margin-bottom: 5px;
+}
+.house-info-address{
+    width: 250px;
+    padding-bottom: 20px;
+}
+.rules{
+    width: 275px;
+    height: 1px;
+    background: #dadada;
+    margin: 0 auto;
+}
+.house-info-time{
+    height: 27px;
+    padding: 24px 20px;
+}
+.in, .out, .gt{
+    float: left;
+    font-size: 12px;
+    color: #9c9b9b;
+    font-weight: 600;
+}
+.in{
+    padding-right: 30px;
+}
+.gt{
+    font-size: 28px;
+    padding-right: 30px;
+    font-weight: 400;
+}
+.clear2{
+    clear: both;
+}
+.house-info-money{
+    padding-left: 20px;
+    color: #868686;
+    font-weight: 600;
+}
+.count, .service-fee, .coupons{
+    display: inline-block;
+    padding-top:5px;
+    padding-right: 125px;
+}
+.service-fee, .coupons{
+    padding-right: 170px;
+}
+.unit-price, .multiplication, .number{
+    padding: 0;
+}
+.final-price{
+    font-weight: bold;
+    font-size: 24px;
+    color: #433e3e;
+    display: inline-block;
+    margin-top:42px;
+    margin-right: 150px;
+}
+.final-price-num{
+    font-weight: bold;
+    color: #ff5a5f;
+    font-size: 20px;
+}
+/*右侧样式结束*/

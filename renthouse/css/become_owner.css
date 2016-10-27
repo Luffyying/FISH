@@ -1,0 +1,77 @@
+/*content开始*/
+body{
+    background: #FFFFFF;
+}
+.container{
+
+}
+#edit-area{
+    background: #FFFFFF;
+    float: left;
+    margin-top: 30px;
+}
+#house-img{
+    margin-top: -9px;
+    border: 1px #c4c4c4 solid;
+    background: blue;
+    float: left;
+}
+#edit-area h3{
+    font-family: 微软雅黑;
+    position: relative;
+    font-size: 24px;
+    margin: 0 0 26px 35px;
+}
+.edit-area-content{
+    padding-left: 35px;
+}
+.edit-area-group{
+    margin-bottom: 20px;
+}
+.edit-area-group label{
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #949494;
+    left: 1px;
+}
+::-webkit-input-placeholder{
+    color: #bababa;
+    font-size: 16px;
+}
+.edit-area-group input{
+    border: 1px #c4c4c4 solid;
+    height: 43px;
+    width: 380px;
+    padding:4px 20px;
+}
+.edit-area-group .first_name{
+    width: 180px;
+    float: left;
+    margin-right: 20px;
+}
+.edit-area-group .last_name{
+    width: 180px;
+}
+.edit-area-group .intro{
+    width: 573px;
+    height: 88px;
+    border: 1px #c4c4c4 solid;
+    font-size: 16px;
+    padding:20px;
+}
+.edit-area-radio .agree{
+    width: 15px;
+    height: 15px;
+    margin: 0 19px 0px 8px;
+}
+.edit-area-button .submit{
+    border: 1px #c4c4c4 solid;
+    width: 103px;
+    height: 48px;
+    background: #6dbd20;
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+/*content结束*/

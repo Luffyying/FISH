@@ -1,0 +1,188 @@
+/*通用样式开始*/
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 12px;
+}
+body{
+    /*background: #f4f4f4;*/
+    font-family:'Microsoft Yahei'!important ;
+}
+ul, ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+::-webkit-input-placeholder{
+    color: #707070;
+}
+#search-input::-moz-placeholder {
+    color: #707070;
+}
+:-ms-input-placeholder{
+    color: #707070;
+}
+.container{
+    margin: 0 auto;
+}
+/*通用样式结束*/
+/*header开始*/
+#header{
+    width: 100%;
+    height: 59px;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index:1111;
+    /*border-bottom: 1px solid #000;*/
+    box-shadow: 0 0 5px #999;
+}
+.logo1{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.logo2{
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+#header-menu{
+    position: relative;
+    top: 20px;
+}
+#header-menu #header-nav{
+    position: absolute;
+    right: -2%;
+}
+#header-nav li{
+    width: 65px;
+    float: left;
+    text-align: center;
+    line-height: 23px;
+    font-size: 16px;
+    color: #656961;
+    margin-right: 9px;
+    cursor: pointer;
+}
+#header-nav li.break{
+    width: 5px;
+}
+#header-nav .header-list{
+    height: 100%;
+    padding-top: 10px;
+    display: none;
+}
+#header-nav .header-list li{
+    width: 80px;
+    background: #fff;
+    float: left;
+}
+#header-nav .header-list li a{
+    font-size: 9px;
+    float: left;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+#header-nav .header-list li a:hover{
+    color: #1B242F;
+    background: #f9f9f9;
+}
+/*header结束*/
+/*footer开始*/
+#footer{
+    width: 100%;
+    height: 220px;
+    padding-top: 61px;
+    background: #2b2d2e;
+    position: relative;
+}
+#footer .container{
+    width: 59%;
+    height: 97px;
+    margin: 0 22% 62px 16%;
+    position: relative;
+}
+#footer .btn-group{
+    width: 32%;
+    height: 42px;
+    position: absolute;
+    left: 0;
+}
+#footer .btn-group:nth-child(2n){
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#footer .btn-group button img{
+    float: right;
+}
+#footer .btn-default{
+    width: 92%;
+    height: 42px;
+    border-radius: 0;
+    background: #484848;
+    border: #484848;
+    font-size: 16px;
+    color: #fff;
+    text-align: left;
+}
+#footer .dropdown-toggle{
+    width: 15px;
+    padding: 0 0 0 1px;
+    background: #f0f0f0;
+    color: #000;
+}
+#footer .dropdown-toggle img{
+    position: absolute;
+    left: -1px;
+}
+#footer .dropdown-menu{
+    width: 249px;
+    height: 60px;
+    background: #484848;
+    overflow-y: scroll;
+}
+#footer .dropdown-menu a{
+    color: #000;
+}
+#footer a{
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+}
+#footer .footer1{
+    position: absolute;
+    top: -10px;
+    left: 46.5%;
+}
+#footer a h4{
+    font-size: 15px;
+    margin-bottom: 31px;
+}
+#footer .footer2{
+    position: absolute;
+    bottom: 0;
+    left: 71.2%;
+}
+#footer .footer3{
+    position: absolute;
+    right: 0;
+    bottom: -19px;
+}
+/*footer结束*/

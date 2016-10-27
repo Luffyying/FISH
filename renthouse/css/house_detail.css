@@ -1,0 +1,189 @@
+/* ----------------------------- */
+hr{
+    border-color: #ccc;
+    margin: 0;
+}
+/* --------carousel-css---------- */
+#myCarousel img{
+    width: 100%;
+}
+/* --------calender-css-------------- */
+.calendar_header{
+    display: inline-block;
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+    margin-top: 20px;
+}
+.total_price{
+    color: white;
+    float: right;
+}
+/* .fixed{
+    position: fixed;
+    top: 60px;
+} */
+.date_list{
+    padding-top: 15px;
+}
+.bookBtn{
+    background-color: #6DBD20;
+    text-align: center;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+.collectBtn{
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;   
+    margin-top: 10px;
+}
+/* -------owner-info------------- */
+.owner_info{
+    padding: 15px;
+    padding-bottom: 0;
+}
+.head-info{
+    text-align: center;
+}
+
+.house_title{
+    overflow: hidden;
+}
+.house_title h2{
+    float: left;
+}
+.house_title span{
+    float: right;
+    padding-top: 30px;
+}
+
+.like_rate{
+    padding-left: 50px;
+    font-size: 20px;
+    color: #f00;
+}
+.head-info-content .hits{
+    padding-right: 50px;
+}
+#houseId{
+    display: none;
+}
+/* ----------house-detail--------------- */
+.house_detail{
+    background-color: rgb(245,245,245);
+    margin: 15px;
+    padding: 30px;/* 响应式时改掉 */
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.house_detail dt{
+    padding-top: 15px;
+    text-align: left;
+}
+.house_detail dd{
+    padding-top: 15px;
+    margin-left: 160px;/* 响应式时改掉 */
+}
+.house_detail hr{
+    margin-top: 15px;/* 响应式时改掉 */
+}
+.house_detail .asset{
+    box-sizing: border-box;
+    /*width: 16%; 响应式时去掉 */
+    width: 80px;/* 响应式时去掉 */
+    display: inline-block;
+    text-align: center;
+}
+.house_condition{
+    display: inline-block;
+    width: 40%;
+}
+/* ---------house_pic------------ */
+.detail_picture{
+    padding: 0 30px;/* 响应式时去掉 */
+}
+.detail_picture h3{
+    padding-left: 15px;
+}
+#detail_pic_carousel{
+    overflow: hidden;
+    position: relative;
+}
+.pic_container{
+    width: 5000px;
+    position: relative;
+    transition: left .3s ease;
+}
+#detail_pic_carousel img{
+    display: inline;
+    width: 270px;
+    margin-right: 5px;
+}
+.slide_btn{
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    background: rgba(0,0,0,.4);
+    border-radius: 50%;
+    top:50%;
+    margin-top: -15px;
+    text-align: center;
+    cursor: pointer;
+    /*display: none;*/
+}
+.pic_prev{
+    left: 10px;
+}
+.pic_next{
+    right: 10px;
+}
+/* -------comment-css------ */
+.comments{
+    padding: 0 30px;
+}
+.comments h3{
+    padding: 15px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.comment_list{
+    margin-top: 15px;
+}
+.comment_list hr{
+    border-color: #ccc;
+}
+.comments .like_rate{
+    float: right;
+}
+.red_hearts{
+    font-size: 20px;
+    color: #f00;
+}
+.comment_img img{
+    width: 200px;
+}
+.comment_time{
+    float: right;
+}
+.load_more{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0; 
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+/* media query
+@media (max-width: 1000px) {
+    .fixed{
+        position: relative;
+        top: 60px;
+    }
+} */

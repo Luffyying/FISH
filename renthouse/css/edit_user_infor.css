@@ -1,0 +1,118 @@
+.edit{
+	font-size: 20px;
+	font-family: 黑体;
+	font-weight: bold;
+}
+.name1{
+	height: 45px;
+	width: 120px;
+}
+.imgCrop{
+	//height: 100px;
+	width: 80px;
+	margin-top: 20px;
+	overflow:hidden;
+	//display: none;
+}
+ .imgCrop img{
+        height: 70px;
+        width: 70px;
+    }
+.hid{
+    height: 0;
+    //height: 70px;
+    width: 90px; 
+}
+.pa{
+	width: 70px;height: 75px; opacity: 0;
+	position: absolute;
+	top: 10px;
+	left: 70px;
+}
+.por{
+	position: relative;
+	padding: 20px 0;
+}
+.portrait{
+	cursor: pointer;
+	padding: 20px 25px;
+	border:1px solid #ccc;
+	//margin-top: 40px;
+	background: #fff;
+	font-size: 30px;
+}
+.year{
+	height: 45px;
+	width: 230px;
+}
+.tel{
+	width: 378px;
+	height: 45px;
+}
+.address{
+	width: 576px;
+	height: 45px;
+}
+.pic{
+	height: 520px;
+	width: 316px;
+}
+.list{
+	margin:15px 0;
+	margin-left: 10px;
+}
+.span-icon{
+	display: inline-block;
+	height: 60px;
+	width: 45px;
+	margin: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+.brank{
+	font-size: 14px;
+}
+.list li{
+	float: left;
+	margin-right: 20px;
+}
+.list li span{
+	display: block;
+}
+.clearfix:after{
+	content: '';
+	clear: both;
+	display: block;
+}
+.block{
+	width: 600px;
+}
+.introduce{
+	width: 576px;
+	height: 100px;
+	padding: 10px;
+	margin-left: 10px;
+}
+.save{
+	height: 40px;
+	width: 106px;
+	color: #fff;
+	background: #6dbd20;
+	border:0;
+}
+.selected{
+	color:#6dbd20;
+}
+input{
+	padding: 10px;
+}
+.icon_lists li{
+  float:left;
+  width: 100px;
+  height:100px;
+  text-align: center;
+}
+.iconfont-hobby{
+	font-size: 30px;
+}
+

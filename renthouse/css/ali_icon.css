@@ -1,0 +1,47 @@
+/*爱好开始*/
+@font-face {font-family: 'iconfont-hobby';
+    src: url('../fonts/hobby/iconfont.eot'); /* IE9*/
+    src: url('../fonts/hobby/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/hobby/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/hobby/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../fonts/hobby/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+/*爱好结束*/
+/*便捷设施开始*/
+@font-face {font-family: 'iconfont-convenient';
+    src: url('../fonts/convenient/iconfont.eot'); /* IE9*/
+    src: url('../fonts/convenient/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/convenient/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/convenient/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../fonts/convenient/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+/*便捷设施结束*/
+.iconfont-hobby{
+    font-family:"iconfont-hobby" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.iconfont-convenient{
+    font-family:"iconfont-convenient" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-huahua:before { content: "\e60b"; }
+.icon-sheying:before { content: "\e600"; }
+.icon-huahua1:before { content: "\e601"; }
+.icon-gouwu:before { content: "\e60c"; }
+.icon-wudao:before { content: "\e602"; }
+.icon-jiazhengfuwu:before { content: "\e603"; }
+.icon-youxi:before { content: "\e604"; }
+.icon-shu:before { content: "\e60d"; }
+.icon-yundongwushu:before { content: "\e605"; }
+.icon-lvxing:before { content: "\e606"; }
+.icon-iconfontbiaozhunmoban01:before { content: "\e607"; }
+.icon-meishi:before { content: "\e608"; }
+.icon-dianying:before { content: "\e609"; }
+.icon-chongwu:before { content: "\e60a"; }
