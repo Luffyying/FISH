@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>双向绑定</title>
+</head>
+<body>
+	<div id="main">
+		{{firstname}}+{{lastname}}={{fullname}}
+	</div>
+	<script src='vue.js'></script>
+	<script>
+		var v = new Vue({
+			el:'#main',
+			data:{
+				firstname:'zhangsan',
+				lastname:'san',
+				fullname:'zhangsan'
+			},
+			computed:{
+				fullname:{
+					get:function(){
+					   return this.firstname + ' '+ this.lastname;
+					},
+					set:function(val){
+						this.firstname = val.split(' ')[0];
+						this.lastname = val.split(' ')[1];
+					}
+				}
+			}
+
+			
+		});
+		/*采用监听也可以得到同样的效果*/
+        // v.$watch('firstname',function(val){
+        // 	this.fullname = val + ' '+this.lastname
+        // });
+        // v.$watch('lastname',function(val){
+        // 	this.fullname = this.firstname + ' '+ val;
+        // });
+	</script>
+</body>
+</html>

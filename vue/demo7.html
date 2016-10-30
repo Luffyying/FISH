@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>little example</title>
+	<style>
+		#main{
+			text-align: center;
+			margin:30px auto;
+			width: 250px;
+		}
+		.pink{
+			color: pink;
+		}
+	</style>
+</head>
+<body>
+    <div id='main'>
+    	<input v-model="msg">
+    	<button v-on:click='add'>add</button>
+    	<ul>
+    		<li v-for="item in items | filterBy msg | orderBy 'value'" v-bind:class='{pink:item.state}' v-on:click='change(item)'>
+    			{{item.value}}
+    		</li>
+    	</ul>
+    </div>
+	<script src='vue.js'></script>
+	<script>
+		new Vue({
+			el:'#main',
+			data:{
+				msg:'',
+				items:[],
+				//isPink:false
+			},
+			methods:{
+				add:function(){
+					this.items.push({value:this.msg,state:false}),
+					this.msg = ''
+				},
+				change:function(item){
+					item.state = !item.state;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

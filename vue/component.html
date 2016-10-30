@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件化</title>
+</head>
+<body>
+	<div id="main">
+		<mycom></mycom>
+	</div>
+	<div>
+		<parcom></parcom>
+	</div>
+	<script src='vue.js'></script>
+	<script>
+	/*定义组件*/
+	var com = Vue.extend({
+		template:"<div>hello</div>"
+	});
+	/*注册组件*/
+	Vue.component('mycom',com);
+	/*局部组件嵌套，只能在父组件中使用*/
+	var par = Vue.extend({
+		template:"<div>world</div><child></child>",
+		components:{
+			"child":com
+		}
+	});
+	Vue.component('parcom',par);
+
+	//or
+	// Vue.component('yourcom',{
+	// 	template:'haha'
+	// });
+	
+	</script>
+</body>
+</html>

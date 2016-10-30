@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>双向绑定</title>
+</head>
+<body>
+	<div id="main">
+		{{a}}--{{b}}
+	</div>
+	<script src='vue.js'></script>
+	<script>
+		var v = new Vue({
+			el:'#main',
+			data:{
+				a:1,
+				b:2
+			},
+			computed:{
+				b:{
+					get:function(){
+						return this.a+1;
+					},
+					set:function(val){
+						this.a = val-1;
+					}
+					
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

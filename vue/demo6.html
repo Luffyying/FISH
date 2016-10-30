@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>双向绑定</title>
+	<style>
+		.red{
+			height: 50px;
+			width: 50px;
+			background: red;
+		}
+		.font{
+			font-size: 30px;
+		}
+		.color{
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="main">
+		<div v-bind:class='{red:isRed,font:isFont}'>
+			hello 
+		</div>
+		<div v-bind:class='classa'>
+			hello 
+		</div>
+		<div v-bind:class='[classa,classb]'>
+			hello 
+		</div>
+		<div v-bind:style="{'color':stylea,'font-size':styleb}">
+			hahahahahaah
+		</div>
+		<div v-bind:style="stylec">
+			wwwwwwwww
+		</div>
+		<div v-bind:style="[stylee,stylef]">
+			wwwwwwwww
+		</div>
+	</div>
+	<script src='vue.js'></script>
+	<script>
+	/* isRed and isFont are all boolean*/
+		var v = new Vue({
+			el:'#main',
+			data:{
+				isRed:true,
+				isFont:false,
+				classa:'red',
+				//classa:{red:true,font:true},
+				classb:{color:true},
+				stylea:'pink',
+				styleb:'50px',
+				stylec:{'color':'yellow','font-size':'10px'},
+				stylee:{'color':'green'},
+				stylef:{'font-size':'20px'}
+			}
+			
+		});
+
+       
+	</script>
+</body>
+</html>

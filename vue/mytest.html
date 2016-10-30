@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    *{
+	    	padding: 0,
+	    	margin:0
+	    }
+		li{
+			width: 200px;
+			height: 50px;
+			background: pink;
+			margin-bottom: 10px;
+			color: #000;
+			list-style: none;
+			text-align: center;
+			line-height: 50px;
+
+		}
+		.red{
+			background: green;
+		}
+		span{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<ul>
+		    <p>
+			<li v-bind:class="{red:item.flag}" v-on:click='change(item)' v-for='item in items'>
+				{{item.name }}<span>{{item.price | currency '￥'}}</span>
+			</li>
+			<hr>
+			total:<span>{{total() |currency '￥'}}</span>
+		</ul>
+	</div>
+	<script src='vue.js'></script>
+	<script>
+		new Vue({
+			el:'#div1',
+			data:{
+				items:[{name:'iphone',price:40,flag:true},{name:'iphone',price:40,flag:true}
+				,{name:'iphone',price:40,flag:true},{name:'iphone',price:40,flag:true},{name:'iphone',price:40,flag:true}]
+			},
+			methods:{
+				change:function(item){
+					item.flag = !item.flag;
+				},
+				total:function(){
+					var to = 0;
+					this.items.forEach(function(i){
+						if(!i.flag){
+							to+=i.price;
+						}
+					});
+						
+					return to;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

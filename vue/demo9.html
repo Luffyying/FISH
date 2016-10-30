@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>语法</title>
+</head>
+<body>
+	<div id="main">
+		<div v-if='ok'>
+			sdfsdf
+		</div>
+		<div v-else>
+			sdfsdflhhhhhhh
+		</div>
+		<!-- 将不用的内容隐藏 -->
+		<div v-show='ok'>
+			kkk
+		</div>
+	</div>
+	<script src='vue.js'></script>
+	<script>
+		new Vue({
+			el:'#main',
+			data:{
+				ok:true,
+				s:'haha'
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基本控件</title>
+</head>
+<body>
+	<div id="main">
+		<!-- 文本域 -->
+		<span>leave a message:</span>
+		<textarea v-model="msg" placeholder="add the message" ></textarea>
+		<p>{{msg}}</p>
+		<!-- 多选框 -->
+		<input type="checkbox" id='checkbox' v-model='checked'>
+		<label for="checkbox">{{checked}}</label>
+		<!-- 多个多选框 -->
+		<input type="checkbox" id='c++' value='c++' v-model='names'>
+		<label for="c++">c++</label>
+		<input type="checkbox" id='java' value='java' v-model='names'>
+		<label for="java">java</label>
+		<input type="checkbox" id='javascript' value='javascript' v-model='names'>
+		<label for="javascript">javascript</label><br>
+		<span>{{names}}</span>
+		<!-- 单选框 -->
+		<input type="radio" id='one' value='one' v-model='pick'>
+		<label for="one">one</label>
+		<input type="radio" id='two' value='two' v-model='pick'>
+		<label for="two">two</label><br>
+		<span>{{pick}}</span>
+		<!-- 下拉列表 -->
+		<select v-model="selected">
+			<option selected>a</option>
+			<option>b</option>
+			<option>c</option>
+		</select>
+		<span>{{selected}}</span>
+		<!-- 多选的下拉列表 -->
+		<select v-model="select" multiple>
+			<option selected>a</option>
+			<option>b</option>
+			<option>c</option>
+		</select>
+		<span>{{select}}</span>
+		<!-- 动态渲染 -->
+		<select v-model='sel'>
+			<option v-for='option in options' v-bind:value='option.value'>
+				{{option.text}}
+			</option>
+		</select>
+		<span>{{sel}}</span>
+	</div>
+	<script src='vue.js'></script>
+	<script>
+		new Vue({
+			el:'#main',
+			data:{
+				msg:'',
+				checked:false,
+				names:[],
+				pick:[],
+				selected:[],
+				select:[],
+				sel:[],
+				options:[
+				  {text:'one',value:'a'},
+				  {text:'two',value:'b'},{text:'three',value:'c'}
+				]
+			}
+		});
+	</script>
+</body>
+</html>

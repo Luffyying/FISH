@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <div id='main'>
+		
+	</div> -->
+	<mycom msg='sss'></mycom>
+	<script src='vue.js'></script>
+	<script>
+	var com = Vue.extend({
+		template:"<div>{{msg}}</div>",
+		//props:['msg']
+		props:{
+			msg:[Number,String];
+		}
+	});
+	Vue.component('mycom',com);
+		// Vue.component('com',{
+		// 	template:"hello world"
+		// });
+    new Vue({
+    	el:'body'
+
+    });
+	</script>
+</body>
+</html>

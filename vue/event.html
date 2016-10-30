@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件绑定</title>
+</head>
+<body>
+	<div id="main">
+		<input v-model='msg' v-on:keyup.enter='change'>
+		<!-- <button v-on:click='change'>click</button> -->
+		<ul>
+			<li v-for='item in items'>
+				{{$index}}{{item}}
+			</li>
+		</ul>
+		<ul>
+			<li v-for='ob in obj'>
+				{{$key}},{{ob}}
+			</li>
+		</ul>
+		<ul>
+			<li v-for='(key,val) in obj'>
+				{{key}},{{val}}
+			</li>
+		</ul>
+		<ul>
+			<li v-for='i in 10'>
+				{{i}}
+			</li>
+		</ul>
+	</div>
+	<script src='vue.js'></script>
+	<script>
+		var v = new Vue({
+			el:'#main',
+			data:{
+				msg:'ha',
+				items:[],
+				obj:{
+					name:'wang',
+					age:10
+				}
+			},
+			methods:{
+				change:function(){
+					this.items.push(this.msg),
+					this.msg = ''
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

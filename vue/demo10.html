@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基本绑定</title>
+</head>
+<body>
+	<div id="main">
+		<input v-model="message">
+		<com v-bind:msg='message'></com>
+	</div>
+	<script src='vue.js'></script>
+	<script>
+		var comp = Vue.extend({
+			template:"<div>{{msg}}</div>",
+			props:['mgs']
+			// props:{表单验证功能
+			// 	msg:[Number,String]
+			// }
+		});
+		Vue.component('com',comp);
+		new Vue({
+			el:'#main',
+			data:{
+				message:''
+			}
+		});
+	</script>
+</body>
+</html>
