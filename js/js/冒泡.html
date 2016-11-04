@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr = [2,6,3,1,4];
+		function bubble(arr){
+			var change;
+			for(var i=arr.length;i>0;i--){
+				for(var j=0;j<i;j++){
+					if(arr[j]>arr[j+1]){
+						change = arr[j+1];
+						arr[j+1]=arr[j];
+						arr[j]=change;
+					}
+				}
+			}
+		}
+		bubble(arr);
+		console.log(arr);
+	</script>
+</body>
+</html>

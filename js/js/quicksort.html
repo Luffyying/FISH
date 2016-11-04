@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr = [2,6,3,1,4];
+
+			
+			function sort(arr,left,right){
+				if(left>=right){
+					return;
+				}
+				var i=left;
+				var j=right;
+				var worth=arr[i];
+				while(i<j){
+					while(i<j&&arr[j]<=worth){
+						j--;
+					}
+					arr[i]=arr[j];
+					while(i<j&&arr[i]>worth){
+						i++;
+					}
+					arr[j]=arr[i];
+				}
+				arr[i]=worth;
+				sort(arr,left,i-1);
+				sort(arr,i+1,right);
+				
+			}
+		var left=0,right=arr.length-1;
+			var worth = arr[left];
+		sort(arr,left.right);
+		console.log(arr);
+	</script>
+</body>
+</html>

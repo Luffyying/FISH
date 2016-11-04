@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function rand(n){
+			var str = 'asdfsdfs93201';
+			var temp = '';
+			for(var i=0;i<n;i++){
+				temp+=str.charAt(Math.floor(Math.random()*str.length));
+			}
+			return temp;
+		}
+		console.log(rand(7));
+	</script>
+</body>
+</html>
