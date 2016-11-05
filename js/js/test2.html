@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var val = 'smtg';
+  	console.log('Value is ' + (val === 'smtg') ? 'Something' : 'Nothing');
+  	 var name = 'World!';
+    (function () {
+
+        if (typeof name === 'undefined') {
+            name = 'Jack';
+            console.log('Goodbye ' + name);
+        } else {
+            console.log('Hello ' + name);
+        }
+    })();
+     (function () {
+        if (typeof name === 'undefined') {
+            var name = 'Jack';
+            console.log('Goodbye ' + name);
+        } else {
+            console.log('Hello ' + name);
+        }
+    })();
+    var str = 'songyy';
+	(function(){
+	  if(typeof str === 'undefined'){
+	    var str = 'abc';
+	    console.log(str); // This is executed
+	    // Because the `var str` declaration is visible to the function, but the corresponding initialization is not
+	  }
+	})();
+	(function(){
+	  if(typeof str === 'undefined'){
+	    console.log(str); // This is not executed
+	    // Because when there's no locally defined `str`, it's then referred to the gloabl one, which is... defined.
+	  }
+	})();
+	// var END = Math.pow(2, 53);
+	// var START = END - 100;
+	// console.log("(START,END,END+1) = " + START + ", " + END + "," + (END+1));
+	// console.log('END == (END+1) is ' + (END == (END + 1))); // TRUE, interestingly
+
+	var ary = [0,1,2];
+	ary[10] = 10;
+	ary.filter(function(x) { return x === undefined;});
+	console.log(ary); 
+
+
+	function showCase(value) {
+    switch(value) {
+    case 'A':
+        console.log('Case A');
+        break;
+    case 'B':
+        console.log('Case B');
+        break;
+    case undefined:
+        console.log('undefined');
+        break;
+    default:
+        console.log('Do not know!');
+    }
+	}
+	showCase(new String('A'));
+    // var a = 'A';
+    //var b = String('A');
+    // var a = new String('A');
+    //这两种的a不相等，是两个东西,但是第一个a和b是相等的
+
+    var min = Math.min(), max = Math.max()
+	//min Infinity
+	//max -Infinity
+	
+	var a = Date(0); var b = new Date(0); var c = new Date();
+	//Date(0) returns the Date as a string, new Date(0) return the Date object, with TimeStamp set to 0; new Date() set to current time
+    
+    function f() {}
+	var parent = Object.getPrototypeOf(f);
+	console.log(f.name); //  f
+	console.log(parent.name); // ''
+
+	function foo() { }
+	var oldName = foo.name;
+	foo.name = "bar";
+	console.log([oldName, foo.name]);
+
+	(function(){
+	  var x = y = 1;
+	})();
+	console.log(x);//error ,x is not defined
+	console.log(y);//1
+	</script>
+</body>
+</html>
