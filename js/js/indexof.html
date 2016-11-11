@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function indexOf(arr, item) {
+    if(arr.length!=0){
+    	var k =0;
+   for(var i in arr){
+       
+       if(arr[i]==item){
+           return i;
+       }else{
+           k++;
+       }
+       if(k==arr.length-1){
+           return -1;
+       }
+   }
+    }
+}
+console.log(indexOf([1,2,3,4],9));
+function sum(arr) {
+    s = Number(0);
+    for(var i in arr){
+        s+=arr[i];
+    }
+    return s;
+}
+console.log(sum([1,2,3,4]));
+function removeWithoutCopy(arr, item) {
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]==item){
+			arr.splice(i,1);
+			i--;
+		}
+	}
+	return arr;
+	}
+
+var b = [1, 2, 2, 3, 4, 2, 2];
+removeWithoutCopy(b, 2);
+console.log(b);
+
+function append(arr,item){
+	// var a = arr;//不能这样写，会改变原数组
+ //    if(arr.length){
+	// a[arr.length]=item;
+ //    }else{
+ //        a.push(item);
+ //    }
+    var newArr = [];
+ 	for(var i=0;i<arr.length;i++){
+ 		newArr[i]=arr[i];
+ 	}
+ 	newArr.push(item);
+	return newArr;
+}
+console.log(append([], 10));
+function del(arr){
+    var newArr = [];
+ 	for(var i=0;i<arr.length;i++){
+ 		newArr[i]=arr[i];
+ 	}
+ 	newArr.splice(arr.length-1,1);
+ 	return newArr;
+}
+var c=[1,2,3];
+console.log(del(c));
+function prepend(arr,item){
+	var newArr = [];
+	newArr.push(item);
+	var p = 1;
+	for(var i in arr){
+		newArr[p]=arr[i];
+		p++;
+	}
+	return newArr;
+}
+console.log(prepend([1,2,3,4],6));
+function curtail(arr){
+	var newArr= [];
+	for(var i=1;i<arr.length;i++){
+		console.log(arr[i]);
+       newArr[i-1]=arr[i];
+	}
+	return newArr;
+}
+console.log(curtail([1,2,3,4]));
+function concat(arr1, arr2) {
+	var a=[];
+	for(var i in arr1){
+		a[i]=arr1[i];
+	}
+	return a.concat(arr2);
+}
+console.log(concat([1, 2, 3, 4], ['a', 'b', 'c', 1]));
+function insert(arr, item, index) {
+	var a =[];
+	for(var i in arr){
+		a[i]=arr[i];
+	}
+	a.splice(index,0,item);
+	return a;
+}
+console.log(insert([1, 2, 3, 4], 'z', 2));
+function count(arr, item) {
+	var a=[];
+	a[item]=0;
+	for(var i in arr){
+	    if(arr[i]==item){
+	    	a[arr[i]]++;
+	    }
+	}
+	return a[item];
+}
+console.log(count([1, 2, 4, 4, 3, 4, 3], 4));
+function duplicates(arr) {
+	var a=[];
+	var b=[];
+	for(var i=0;i<arr.length;i++){
+		if(!a[arr[i]]){
+			a[arr[i]]=1;
+		}else{
+			a[arr[i]]++;
+		}
+	}
+	console.log(a);
+	for(var j=0;j<a.length;j++){
+		if(a[j]>1){
+			b.push(j);
+		}
+	}
+	return b;
+}
+console.log(duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3]).sort());
+function square(arr) {
+	var a =[];
+	for(var i in arr){
+		a[i]=Math.pow(arr[i],2);
+	}
+	return a;
+}
+console.log(square([1, 2, 3, 4]));
+function findAllOccurrences(arr, target) {
+	var a=[];
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]==target){
+			a.push(i);
+		}
+	}
+	// for(var i in arr){
+	// 	a.push(i);此时push进去的i为字符串
+	// }
+	return a;
+}
+console.log(findAllOccurrences('abcdefabc'.split(''), 'a').sort());
+function functions(flag) {
+    if (flag) {
+      getValue=function() { return 'a'; }
+    } else {
+      getValue=function() { return 'b'; }
+    }
+
+    return getValue();
+}
+console.log(functions(true));
+function parse2Int(num) {
+    return parseInt(num,10);
+}
+console.log(parse2Int('0x12'));
+function count(start, end) {
+	console.log(start++);
+	var timer = setInterval(function(){
+		if(start<=end){
+			console.log(start++);
+		}else{
+			clearInterval(timer);
+		}
+	},100);
+	return {
+		cancel:function(){
+			clearInterval(timer);
+		}
+	}
+}
+var k = count(10,20);
+k.mycount();
+</script>
+</body>
+</html>
