@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>localstorage</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		#sidebar{
+			
+			width: 100px;
+		}
+		.one{
+			/*height: 30px;*/
+			background: #ccc;
+			text-align: center;
+			/*line-height: 30px;*/
+			cursor: pointer;
+		}
+		.one ul{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<ul id='sidebar'>
+		<li class='one'>
+		menu1 >>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</li>
+		<li class='one'>
+		menu2 >>
+			<ul>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</li>
+		<li class='one'>
+		menu3 >>
+			<ul>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+			</ul>
+		</li>
+	</ul>
+	<script src='jquery.min.js'></script>
+	<script>
+		$(function(){
+			var funStoreDisplay = function(){
+			var arrDisplay = [];
+			$('#sidebar > li').each(function(index,elem){
+				arrDisplay[index] = $(this).children('ul').css('display')=='block'?1:0;
+			});
+			//能力检测
+			if(window.localStorage){
+				localStorage.setItem('menuTitle',arrDisplay);
+			}else{
+				Cookie.write('menuTitle',arrDisplay);
+			}
+			}
+			var strStoreDate = window.localStorage?localStorage.getItem('menuTitle'):Cookie.read('menuTitle');
+			if(strStoreDate){
+				var k = strStoreDate.split(',');
+				// k.forEach(function(display,index){
+				// 	console.log(display,index);
+				// 	if(k[index]==0){
+				// 		//console.log('收起');
+				// 	}else{
+				// 		//console.log('展开');
+				// 	}
+				// })
+				$('.one ul').each(function(index){
+					if(k[index]==0){
+						$(this).css('display','none');
+					}else{
+						$(this).css('display','block');
+					}
+				});
+			}
+			$('.one').toggle(function(){
+				$(this).children('ul').slideDown('slow');
+		 	$(this).children('ul').css('display','block');
+		 	funStoreDisplay();
+			},function(){
+			$(this).children('ul').slideUp('slow');
+			$(this).children('ul').css('display','none');
+			funStoreDisplay();
+			});
+		})
+	</script>
+</body>
+</html>
