@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function bindThis(f, oTarget) {
+    		return function(){
+    			return f.apply(oTarget,arguments);
+    		}
+		}
+		bindThis(function(a,b){return this.test + a + b}, {test: 1})(2, 3);
+	</script>
+	
+</body>
+</html>
