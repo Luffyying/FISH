@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var a = [2,6,3,1,0];
+		function select(arr){
+			var min=null;
+			var k =null;
+			for(var i=0;i<a.length-1;i++){
+				min = i;
+				for(var j=i+1;j<a.length;j++){
+					if(a[j]<a[min]){
+						min = j;
+					}
+				}
+				if(min!=i){
+					k = a[i];
+					a[i]=a[min];
+					a[min]=k;
+					//swap(a[i],a[min]);
+				}
+			}
+		}
+		// function swap(c,b){
+		// 	console.log('ss');
+		// 	var k;
+		// 	k = c;
+		// 	c=b;
+		// 	b=k;
+		// }
+		select(a);
+		console.log(a);
+	</script>
+</body>
+</html>

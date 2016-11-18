@@ -1,0 +1,8 @@
+模块：一个实现某些特定功能的文件，以实现模块化编程
+通过require(模块名)引入模块
+包：就是一个文件夹，它将模块封装起来，用于发布、更新、依赖管理和版本控制
+通过package.json来描述包的信息，入口文件，依赖的外部包等
+通过npm install来安装包，node_models存放各种包
+（npm remove cookie来移除包）
+文件相关操作：
+fs --内置文件对象filesystem
