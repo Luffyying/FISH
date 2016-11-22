@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app"></div>
+	<script src="react-0.14.7/build/react.js"></script>
+	<script src="react-0.14.7/build/react-dom.js"></script>
+	<script src="react-0.14.7/browser.js"></script>
+
+	<script type="text/babel">
+		
+		var Messagebox = React.createClass({
+			getInitialState : function(){
+				console.log('getInitialState');
+				return {
+					message : 'a',
+					count : 0
+				};
+			},
+			componentWillMount : function(){
+				console.log('componentWillMount');
+				this.timer = setInterval(function(){
+					this.setState({
+						count : this.state.count + 1
+					});
+				}.bind(this), 500);
+			},
+			componentDidMount : function(){
+				console.log('componentDidMount');
+				
+			},
+			componentWillUnmount : function(){
+				console.log('componentWillUnmount');
+				clearInterval(this.timer);
+			},
+			shouldComponentUpdate : function(props, state){
+				console.log('shouldComponentUpdate');
+				if(state.count > 10){
+					return false;
+				}
+				return true;
+			},
+			componentWillUpdate : function(){
+				console.log('componentWillUpdate');
+
+			},
+			componentDidUpdate : function(){
+				console.log('componentDidUpdate');
+
+			},
+			kill : function(){
+				ReactDOM.unmountComponentAtNode(document.getElementById('app'));
+			},
+			render : function(){
+				console.log('render');
+				return (
+					<div>{this.state.count}
+						<button onClick={this.kill}>销毁组件</button>
+					</div>
+				);
+			}
+		});
+		ReactDOM.render(
+			<Messagebox />,
+			document.getElementById('app')
+		);
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

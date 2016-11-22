@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app"></div>
+	<script src="react-0.14.7/build/react.js"></script>
+	<script src="react-0.14.7/build/react-dom.js"></script>
+	<script src="react-0.14.7/browser.js"></script>
+
+	<script type="text/babel">
+		var SubMessagebox = React.createClass({
+			getDefaultProps : function(){
+				return {
+					str : '默认的str'
+				};
+			},
+			render : function(){
+				return (
+					<div>{this.props.str}{this.props.data}</div>
+				);
+			}
+		});
+		var Messagebox = React.createClass({
+			render : function(){
+				var str1 = 'abc';
+				var data = 123;
+				return (
+					<div>messagebox
+						<SubMessagebox str={str1} data={data}/>
+					</div>
+				);
+			}
+		});
+		ReactDOM.render(
+			<Messagebox />,
+			document.getElementById('app')
+		);
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
