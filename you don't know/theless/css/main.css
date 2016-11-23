@@ -1,0 +1,53 @@
+@charset 'utf-8';
+body {
+  background: pink;
+}
+/*可以被编译出来*/
+.box {
+  width: 300px;
+  height: 300px;
+  border: solid 5px pink;
+}
+.bord {
+  border: solid 5px pink;
+}
+.test {
+  border: solid #0000ff 30px;
+}
+.test2 {
+  border: solid 2px 10px;
+}
+.tri {
+  width: 0px;
+  height: 0px;
+  border: 30px solid;
+  border-color: red transparent transparent transparent;
+  overflow: hidden;
+}
+.test4 {
+  width: 320px;
+  height: 300px -20;
+  color: #c2c2c2;
+}
+.list {
+  width: 300px;
+  margin: 0;
+  list-style: none;
+}
+.list li {
+  height: 10px;
+  line-height: 10px;
+  background: pink;
+}
+.list a {
+  color: #ccc;
+}
+.list a:hover {
+  color: red;
+}
+.test6 {
+  width: cale(200px);
+}
+.test7 {
+  border: solid 5px pink !important;
+}

@@ -1,0 +1,85 @@
+@charset 'utf-8';
+body{
+	background: pink;
+}
+/*可以被编译出来*/
+//不会被保留
+//变量   @开头+变量名:值
+@test_width:300px;
+.box{
+	width: @test_width;
+	height: @test_width;
+	.bord;
+}
+//混合
+.bord{
+	border: solid 5px pink;
+}
+//带参数的混合
+.bord2(@test){
+	border: solid  blue @test;
+}
+.test{
+	.bord2(30px);
+}
+.bord3(@bord_width:10px){
+	border: solid 2px @bord_width;
+
+}
+.test2{
+	.bord3();
+}
+//一个完整的三角
+.tri{
+	width: 0px;
+	height: 0px;
+	border: 30px solid;
+	border-color: red transparent transparent transparent;
+	overflow: hidden;
+
+}
+//匹配模式
+.triangle(top,@w:5px,@c:#ccc){
+	width: 0px;
+	height: 0px;
+	border: @w solid;
+	border-color: @c transparent transparent transparent;
+	overflow: hidden;
+}
+//运算
+@te:300px;
+.test4{
+	width: @te + 20;
+	height: @te -20;
+	color: #ccc-10;
+}
+//嵌套
+//嵌套越多，匹配次数越多，尽量减少嵌套
+.list{
+	width: 300px;
+	margin:0;
+	list-style: none;
+	li{
+		height: 10px;
+		line-height: 10px;
+		background: pink;
+	}
+	a{
+		color:#ccc;
+		//&代表上一层，不继承
+		&:hover{
+			color:red;
+		}
+	}
+}
+.k(@w:30px,@c:red,@xx:solid){
+	border:@arguments;
+}
+//避免编译
+.test6{
+	width:~'cale(200px)';
+}
+//!important
+.test7{
+	.bord()!important
+}
