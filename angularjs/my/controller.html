@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/**MVC只是手段，最终目的是模块化和复用*/
+		// controller使用的注意点
+		// 1.不要试图去复用controller,一个控制器一般只负责一小块视图，
+		// 因为控制器主要负责一些业务逻辑，复用的情况较少
+		// 2.不要在controller中操作DOM，这不是控制器的职责，这是指令的职责
+		// 3.不要在controller里面做数据格式化，ng有很好的表单控件
+		// 4.不要做过滤操作，ng有$filter服务
+		// 5.一般来说，controller是不会相互调用的，控制器间的交互会通过事件进行
+	</script>
+</body>
+</html>
