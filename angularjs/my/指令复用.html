@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='Commend'>
+<head>
+	<meta charset="UTF-8">
+	<title>指令复用</title>
+</head>
+<body>
+	<script src='angular-1.3.0.js'></script>
+	<script src='js/commend.js'></script>
+	<div ng-controller='Ctrl1'>
+		<com how='getData1()'>加载数据1</com>
+	</div>
+	<div ng-controller='Ctrl2'>
+		<com how='getData2()'>加载数据2</com>
+	</div>
+	
+</body>
+</html>
