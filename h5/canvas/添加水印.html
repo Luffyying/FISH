@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>离屏canvas ,图片添加水印</title>
+	<style>
+	    body{
+	    	background: #000;
+	    }
+		#canvas{
+			display: block;
+			margin: 0 auto;
+			border:1px solid #aaa;
+		}
+		.range{
+			width: 400px;
+			margin:30px auto;
+			display: block;
+		}
+		#waterMark_canvas{
+			display: none;
+			margin:  0 auto;
+			border:1px solid #aaa;
+		}
+	</style>
+</head>
+<body>
+	<canvas id='canvas'>
+		您的浏览器尚不支持canvas
+	</canvas>
+	<input class='range' id='scale_range' type="range" min='0.1' max='3.0' step='0.01' value='1.0'/>
+	<canvas id='waterMark_canvas'>您的浏览器尚不支持canvas
+	</canvas>
+	<script>
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+		var img = new Image();
+		var range = document.getElementById('scale_range');
+        var waterMark = document.getElementById('waterMark_canvas');
+        var waterMarkContent = waterMark.getContext('2d');
+		window.onload = function(){
+			img.src = '1.jpg';
+			canvas.width = 1152;
+			canvas.height = 768;
+			var scale = range.value
+			//当图片正式读取完成后在进行调用
+			img.onload = function(){
+				//context.drawImage(img,100,100);
+				// context.drawImage(img,100,100,300,300);
+				// context.drawImage(img,100,100,100,100,100,100,200,200);
+				// context.drawImage(img,100,100,100,100,0,0,canvas.width,canvas.height);
+				// context.drawImage(img,0,0,canvas.width,canvas.height);
+				drawImageByScale(scale);
+				//context.drawImage(img,0,0,canvas.width,canvas.height);
+			    range.onmousemove = function(){
+			    	scale = range.value;
+			    	drawImageByScale(scale);
+			    }
+			}
+			//setup watermark canvas
+			waterMark.width = 600;
+			waterMark.height = 100;
+			waterMarkContent.font = 'bold 50px Arial';
+			waterMarkContent.lineWidth = '1';
+			waterMarkContent.fillStyle = 'rgba(255,255,255,0.5)';
+			waterMarkContent.textBaseline = 'middle';
+			waterMarkContent.fillText('==luffying.com ==',20,50);
+
+
+
+
+
+		}
+		function drawImageByScale(scale){
+			var imgW = 1152 * scale;
+			var imgH = 768 * scale;
+			var sx = imgW/2 - canvas.width/2;
+			var sy = imgH/2 - canvas.height/2;
+			// context.drawImage(img,sx,sy,canvas.width,canvas.height,0,0, canvas.width,
+			// 	canvas.height);
+			// console.log(sx , sy ,canvas.width , canvas.height);
+			var dx = canvas.width/2 - imgW/2;
+			var dy = canvas.height/2 - imgH/2;
+			//console.log(dx,dy,imgW,imgH);
+			context.clearRect(0,0,canvas.width,canvas.height);
+			context.drawImage(img,dx,dy,imgW,imgH);
+			context.drawImage(waterMark,canvas.width-waterMark.width,
+			canvas.height-waterMark.height);
+
+		}
+	</script>
+</body>
+</html>
