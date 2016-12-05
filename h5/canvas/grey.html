@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div style='margin:20px auto;width:1700px'>
+		<canvas id='canvasa' width='600' height="460"></canvas>
+		<canvas id='canvasb' width='600' height="460"></canvas>
+	</div>
+	<div style='clear:both'></div>
+	<div style='text-align: center;margin-top: 50px;font-size: 20px'>
+		<a href="javascript:grey()">grey</a>
+		<a href="javascript:black()">black</a>
+		<a href="javascript:reverse()">reverse</a>
+		<a href="javascript:blur()">blur</a>
+	</div>
+	<script>
+		var canvasa = document.getElementById('canvasa');
+		var contexta = canvasa.getContext('2d');
+		var canvasb = document.getElementById('canvasb');
+		var contextb = canvasb.getContext('2d');
+		var img = new Image();
+		window.onload = function(){
+			img.src = '1.jpg';
+			img.onload = function(){
+				contexta.drawImage(img,0,0,canvasa.width,canvasb.height);
+			}
+		}
+		function black(){
+			var imgData = contexta.getImageData(0,0,canvasa.width,canvasa.height);
+			var pixelData = imgData.data;
+			console.log(pixelData);
+			for(var i=0;i<canvasb.width*canvasb.height;i++){
+				var r = pixelData[i*4+0];
+				var g = pixelData[i*4+1];
+				var b = pixelData[i*4+2];
+				var grey = r*0.3 + g*0.59 + b*0.11;
+				if(grey > 255/2){
+					v = 255;
+				}else{
+					v=0;
+				}
+				pixelData[i*4+0]=v;
+				pixelData[i*4+1]=v;
+			    pixelData[i*4+2]=v;
+			}
+			contextb.putImageData(imgData,0,0,0,0,canvasb.width,canvasb.height);
+
+		}
+		function grey(){
+			var imgData = contexta.getImageData(0,0,canvasa.width,canvasa.height);
+			var pixelData = imgData.data;
+			console.log(pixelData);
+			for(var i=0;i<canvasb.width*canvasb.height;i++){
+				var r = pixelData[i*4+0];
+				var g = pixelData[i*4+1];
+				var b = pixelData[i*4+2];
+				var grey = r*0.3 + g*0.59 + b*0.11;
+				pixelData[i*4+0]=grey;
+				pixelData[i*4+1]=grey;
+			    pixelData[i*4+2]=grey;
+			}
+			contextb.putImageData(imgData,0,0,0,0,canvasb.width,canvasb.height);
+
+		}
+		function reverse(){
+			var imgData = contexta.getImageData(0,0,canvasa.width,canvasa.height);
+			var pixelData = imgData.data;
+			console.log(pixelData);
+			for(var i=0;i<canvasb.width*canvasb.height;i++){
+				var r = pixelData[i*4+0];
+				var g = pixelData[i*4+1];
+				var b = pixelData[i*4+2];
+				pixelData[i*4+0]=255 - r;
+				pixelData[i*4+1]=255 - g;
+			    pixelData[i*4+2]=255 - b;
+			}
+			contextb.putImageData(imgData,0,0,0,0,canvasb.width,canvasb.height);
+
+		}
+		function blur(){
+			var imgData = contexta.getImageData(0,0,canvasa.width,canvasa.height);
+			var tempData = contexta.getImageData(0,0,canvasa.width,canvasa.height);
+			var tempPixeData = tempData.data;
+			var pixelData = imgData.data;
+			for(var i=1;i<canvasb.height;i++){
+				for(var j=1;j<canvasb.width;j++){
+					var totalr =0,totalg =0;totalb =0;
+					for(var dx = -1;dx<=1;dx ++){
+						for(var dy =-1;dy<=1;dy++){
+							var x = i+dx;
+							var y = j+dy;
+							var p = x*canvasb.width +y;
+							totalr +=tempPixeData[p*4+0];
+							totalg +=tempPixeData[p*4+1];
+							totalb +=tempPixeData[p*4+2];
+						}
+						var p = i*canvasb.width + j;
+						pixelData[p*4+0]= totalr /9;
+						pixelData[p*4+1]= totalg /9;
+						pixelData[p*4+2]= totalb /9;
+
+					}
+					
+				}
+			}
+			contextb.putImageData(imgData,0,0,0,0,canvasb.width,canvasb.height);
+
+		}
+	</script>
+</body>
+</html>

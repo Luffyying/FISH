@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div style='margin:20px auto;width:1700px'>
+		<canvas id='canvasa' width='600' height="460"></canvas>
+		<canvas id='canvasb' width='600' height="460"></canvas>
+	</div>
+	<div style='clear:both'></div>
+	<div style='text-align: center;margin-top: 50px;font-size: 20px'>
+		<a href="javascript:filter()">Filter</a>
+	</div>
+	<script>
+		var canvasa = document.getElementById('canvasa');
+		var contexta = canvasa.getContext('2d');
+		var canvasb = document.getElementById('canvasb');
+		var contextb = canvasb.getContext('2d');
+		var img = new Image();
+		window.onload = function(){
+			img.src = '1.jpg';
+			img.onload = function(){
+				contexta.drawImage(img,0,0,canvasa.width,canvasb.height);
+			}
+		}
+		function filter(){
+			var imgData = contexta.getImageData(0,0,canvasa.width,canvasa.height);
+			var pixelData = imgData.data;
+			console.log(pixelData);
+			for(var i=0;i<canvasb.width*canvasb.height;i++){
+				pixelData[i*4+0]=0;
+				//pixelData[i*4+1]=0;
+				//pixelData[i*4+2]=0;
+			}
+			contextb.putImageData(imgData,0,0,0,0,canvasb.width,canvasb.height);
+
+		}
+	</script>
+</body>
+</html>
