@@ -7,7 +7,6 @@ const endTime = new Date(2016,11,6,16,24,00);
 var curSeconds = 0;
 var balls = [];
 const colors =['#33b5e5','#aa66cc','#9933cc','#ff4444','#ff8800','#ffbb33','#99cc00'];
-
 window.onload = function(){
 	var canvas = document.getElementById('canvas');
 	var context = canvas.getContext('2d');
@@ -18,8 +17,6 @@ window.onload = function(){
 		render(context);
 		update();
 	},50);
-	
-
 }
 function update(){
 	var nextTime = getCurSeconds();
