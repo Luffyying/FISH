@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas</title>
+</head>
+<body>
+	<canvas id='canvas' width='700' height="500" 
+	style='border:1px solid #aaa;display: block;margin: 40px auto'>
+		当前浏览器不支持canvas
+	</canvas>
+	<script>
+		window.onload = function(){
+			var canvas = document.getElementById('canvas');
+			var context = canvas.getContext('2d');//绘图环境
+			context.beginPath();
+			context.moveTo(100,100);
+			context.lineTo(500,500);
+			context.lineTo(300,200);
+			context.lineTo(100,100);
+			context.strokeStyle = 'red';
+			context.stroke();
+		    context.closePath();
+			// context.fillStyle = 'rgb(2,100,30)';
+			// context.fill();
+			context.beginPath();
+			context.moveTo(200,200);
+			context.lineTo(250,250);
+			context.lineWidth = 5;//线条粗细
+			context.strokeStyle = 'pink';
+			context.stroke();//基于状态的绘制
+			context.closePath();
+			 //注意陷阱：设置的属性可能会被覆盖。采用beginPath() closePath()，多个路径，分开处理
+		}
+		
+	</script>
+</body>
+</html>

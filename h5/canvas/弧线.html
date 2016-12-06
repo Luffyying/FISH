@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弧形</title>
+</head>
+<body>
+	<canvas id='canvas' width='700' height="500" 
+	style='border:1px solid #aaa;display: block;margin: 40px auto'>
+		当前浏览器不支持canvas
+	</canvas>
+	<script>
+		window.onload = function(){
+			var canvas = document.getElementById('canvas');
+			var context = canvas.getContext('2d');
+			context.lineWidth = 5;
+			context.strokeStyle = '#005588';
+			context.arc(300,300,100,1.5*Math.PI,0);
+			context.arc(300,300,100,0,1.5*Math.PI);
+			//context.arc(300,300,100,1.5*Math.PI,0,true);逆时针
+			context.stroke();
+			for(var i=0;i<10;i++){
+				context.beginPath();
+				context.arc(50 + i*100,180,40,0,2*Math.PI*(i+1)/10);
+				context.stroke();
+			}
+			for(var i=0;i<10;i++){
+				context.beginPath();
+				context.arc(50 + i*100,180,40,0,2*Math.PI*(i+1)/10);
+				context.closePath();//构成封闭图形，默认首尾相连
+				context.stroke();
+			}
+
+		}
+		//0 0.5 1 1.5 2pi   顺时针和逆时针都不改变它们的位置
+	</script>
+</body>
+</html>
