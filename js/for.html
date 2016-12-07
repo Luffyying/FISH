@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//最简单的循环
+		const arr = [1,2,3];
+		for(let i=0;i<arr.length;i++){
+			console.log(arr[i]);
+		}
+		for(let i=0;len=arr.length,i<len;i++){
+			console.log(arr[i]);
+			console.log(typeof i);//number
+		}
+		//for-in
+		
+		let index;
+		for(index in arr){
+			console.log(index + arr[index]);
+			console.log(typeof arr[index]);//number
+			console.log(typeof index);//string
+		}
+		const person = {
+			name:'zhangsan',
+			age:18,
+			hobby:'coding'
+		}
+		let infor;
+		for(infor in person){
+			console.log(infor + person[infor]);
+		}
+	// 	Array 在 Javascript 中是一个对象， Array 的索引是属性名
+	// 实际上， Array 的索引也不是 Number 类型，而是 String 类型的。我们可以正确使用如 arr[0] 的写法的原因是语言可以自动将 Number 类型的 0 转换成 String 类型的 "0" ,但为什么在遍历 Array 对象的时候没有输出 length 这一条属性呢？那是因为 for-in 只能遍历“可枚举的属性”， length 属于不可枚举属性，实际上， Array 对象还有许多其他不可枚举的属性。但是Array.prototype原型上的可枚举属性也会遍历出来
+	arr.name = 'hello';
+	for(index in arr){
+		console.log(index + arr[index]);
+	}
+	Array.prototype.fatherName = 'hi';
+	for(index in arr){
+		console.log(index + arr[index]);
+	}
+	//我们可以发现 for-in 并不适合用来遍历 Array 中的元素，其更适合遍历对象中的属性，这也是其被创造出来的初衷。却有一种情况例外，就是稀疏数组。for-in 只会遍历存在的实体，而一般的循环则会从头遍历到结尾
+	//forEach
+	arr.forEach(function(data,index,arr){
+		console.log(data,index,arr);
+	});
+	arr.forEach((data)=>{
+		console.log(data);
+	});
+	const brr = [];
+	brr[0]='a';
+	brr[1]='b';
+	brr[10]='c';
+	brr.name = 'hello';//该项为新添加的项，不会被遍历到
+	brr.forEach((data,index,arr)=>{
+		console.log(data,index,arr);
+	})
+	//a 0 ["a", "b", 10: "c", name: "hello"]
+    //b 1 ["a", "b", 10: "c", name: "hello"]
+    //c 10 ["a", "b", 10: "c", name: "hello"]
+
+    //forof
+    //这是最简洁、最直接的遍历数组元素的语法。这个方法避开了 for-in 循环的所有缺陷。
+//与 forEach 不同的是，它可以正确响应 break、continue 和 return 语句。
+//其不仅可以遍历数组，还可以遍历类数组对象和其他可迭代对象。
+
+
+
+
+
+
+    // var k = brr.filter(function(data,index,arr){
+    // 	console.log(index,data,arr);
+    // 	if(data>'b'){
+    // 		return data;
+    // 	}
+    // });
+    var g = brr.map(function(data,index,arr){
+    	console.log(index,data,arr);
+    	if(index < 10){
+    		return 8;
+    	}
+    });
+    //console.log(k,brr);
+      console.log(g,brr);
+    //检查是否有数组元素大于等于10：
+
+	function isBigEnough(element, index, array) {
+	    return (element >= 10);
+	}
+	var passed = [2, 5, 8, 1, 4].some(isBigEnough);
+	// passed is false
+	passed = [12, 5, 8, 1, 4].some(isBigEnough);
+	// passed is true
+	//测试是否所有数组元素都大于等于10：
+
+	function isBigEnough(element, index, array) {
+	    return (element >= 10);
+	}
+	var passed = [12, 5, 8, 130, 44].every(isBigEnough);
+	// passed is false
+	passed = [12, 54, 18, 130, 44].every(isBigEnough);
+	// passed is true
+
+	// var index = array.lastIndexOf(searchElement[, fromIndex]);
+	// var array = [2, 5, 9, 2];
+	// var index = array.lastIndexOf(2);
+	// // index is 3
+	// index = array.lastIndexOf(7);
+	// // index is -1
+	// index = array.lastIndexOf(2, 3);
+	// // index is 3
+	// index = array.lastIndexOf(2, 2);
+	// index is 0
+	//indexOf():功能与lastIndexOf()一样，搜索是正向进行的
+    let i;
+    const crr=[1,2,3];
+    for(i of crr){
+    	console.log(i);
+    }
+	</script>
+
+</body>
+</html>
