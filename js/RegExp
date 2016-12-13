@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//匹配连续的n个字符
+		var reg = /k{3}/;
+		var str = '0kkksdf';
+		console.log(reg.test(str));//true
+		console.log(reg.exec(str));//['kkk',index:1,input:'0kkksdf']
+
+    //匹配连续的大于等于m个小于等于n个的字符
+		var reg = /k{3,5}/;
+		var str = 'kkkkkss';
+		console.log(reg.test(str));
+
+    //匹配连续的大于等于n个的字符
+        var reg = /k{3,}/;
+        var str = 'kkksskkk';
+        console.log(reg.test(str));
+    //匹配0个或者多个
+        //var reg = /k{0,}/;
+        var reg = /k*/;
+        var str = 'sfkl';
+        console.log(reg.test(str));
+    //匹配1个或者多个
+        //var reg = /k{1,}/;
+        var reg = /k+/;
+        var str = 'sss';
+        console.log(reg.test(str));
+    //匹配0个或者1个
+        //var reg = /k{0,1}/;
+        var reg = /k?/;
+        var str = 'skk';
+        console.log(reg.test(str));
+    //以字符c开头的
+        var reg = /^c/;
+        var str = 'cksdf';
+        console.log(reg.test(str));    
+    //以字符c结尾的
+        var reg = /c$/;
+        var str = 'sdfc';
+        console.log(reg.test(str));   
+	//匹配除了换行\n之外的所有字符（一个点匹配一个）
+	    var reg = /../;
+	    var str = 's';
+	    console.log(reg.test(str));  
+	//或者的关系
+	//多个或者的关系
+	    //var reg = /^[123]/;
+	    //var reg = /[a-z]{4}/;
+	    //var reg = /[0-9]/;
+	    var reg = /[a-zA-Z0-9]/;
+	    var str = '11sss';
+	    console.log(reg.test(str));
+
+	//匹配不能是或中的一个
+	    var reg = /^[^abc]/;
+	    var str = 'aska';
+	    console.log(reg.test(str));
+	//匹配边界 \b （对于中文无效）
+	    var reg = /\b5/;//左边界
+	    var reg = /5\b/;//右边界
+	    var reg = /\b5\b/;//即是左边界又是右边界
+	    var str = 'sdf 5 sdf';
+	    console.log(reg.test(str));
+	//匹配非边界 \B
+	//匹配一个数字\d
+	//匹配非数字 \D
+	//匹配空白字符('',\t  \n   \r)  \s
+	//匹配非空白字符  \S
+	     var reg = /\s.+/;
+	     var str = 'hello a dog';
+	     console.log(reg.exec(str));// a dog
+	//匹配单词字符  等同于[a-zA-Z0-9];
+	     //var reg = /\w\w\w/;
+	     var reg = /\w+/;
+	     var str = 'sdf00sf 99';
+	     console.log(reg.test(str));
+	     console.log(reg.exec(str));
+	 //string 中的replace()也有匹配的功能
+	     var str = 'hello world';
+	     document.write(str.replace(/world/,'haha'));
+	 //match()
+	     var str = '1 plus 2 equal 3';
+	     console.log(str.match(/\d+/g));//['1','2','3']
+	</script>
+</body>
+</html>
