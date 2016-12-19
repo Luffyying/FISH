@@ -12,3 +12,5 @@ server.listen(8080);
 // 	response.end('hello nodejs');
 	
 // }).listen(8080);链式操作
+//commonjs是规范
+//nodejs基于commonjs 是分为各个模块，通过npm引入包
