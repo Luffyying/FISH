@@ -42,8 +42,11 @@
 			last:function(){
 				return this.eq(-1);
 			},
-			pushStack:function(){
-
+			pushStack:function(elems){
+				var ret = jQuery.merge(this.constructor,elems);
+				ret.prevObject = this;
+				ret.context = this.context;//context 执行上下文
+				return ret;
 			},
 			eq:function(i){
 				var len = this.length,
@@ -57,7 +60,18 @@
 				return this.pushStack(jQuery.map(this,function(elem,i){
 					return callback.call(elem,i,elem);
 				}))
-			}
+			},
+			//实例方法在调工具方法
+			each:function(callback,args){
+				return jQuery.each(this,callback,args)
+			}，
+			ready:function(fn){
+				jQuery.ready.promise().done(fn);
+				return this;
+			},
+			push:core_push,
+			sort:[].sort,
+			splice:[].splice
 			}
 	</script>
 </body>

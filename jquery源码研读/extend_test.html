@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src='jquery-1.12.2.js'></script>
+	<script>
+		//$.extend();
+		//$.fn.extend();
+		// 当只写一个对象自变量的时候，是jQ中扩展插件的形式
+
+		$.extend({//扩展工具方法
+			aaa:function(){
+				alert(1);
+			},
+			bbb:function(){
+				alert(2);
+			}
+		})
+		//$.aaa();
+		//$.bbb();
+		$.fn.extend({//扩展JQ实例方法
+			aaa:function(){
+				alert(3);
+			},
+			bbb:function(){
+				alert(4);
+			}
+		})
+		//$().aaa();
+		//$().bbb();
+
+		//当写多个对象字面量的时候，后面的对象都是扩展到第一个对象身上
+		var a = {};
+		$.extend(a,{name:'ha'},{age:18});
+		console.log(a);
+
+		//还可以做深拷贝和浅拷贝
+		var a = {};
+		//var b = {name:'hello'};
+		var b = {age:18,infor:{name:'hi'}}; ;
+		//$.extend(a,b);//这里的extend中可能有简单的拷贝，也可能有引用的拷贝
+		
+		//a.name= 'h';
+		//console.log(b.name);
+		
+		//如何进行深拷贝 （不受被拷贝对象的影响）
+		$.extend(true,a,b);
+		a.infor.name = 'a';
+		console.log(b.infor.name);
+
+		// var a = {};
+		// $.extend(a,{name :a});
+		//循环引用
+
+		// var a = {name :{job:'it'}};
+		// var b = {name:{age:30}};
+		// $.extend(true,a,b);
+		//会保留原有的值
+
+
+		var a = {name :'wang',age:18};
+		for(b in a){
+			console.log(a[b]);
+		}
+
+	</script>
+</body>
+</html>
