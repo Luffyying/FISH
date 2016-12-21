@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//添加实例属性和方法
+		jQuery.fn = jQuery.prototype = {
+			jquery:core_version,
+			constructor:jQuery,
+			init:function(selector,context,rootjQuery){
+				if(!selector){
+					return this;
+				}
+				if(typeof selector ==='string'){
+					if(selector.charAt(0)==="<" && selector.charAt(selector.length -1)===">" && selector.length >=3){
+						match =[null,selector,null]
+					}else{
+						match = rquickExpr.exec(selector);
+					}
+				}
+			},
+			selector:'',
+			length:0,
+			toArray:function(){//转数组
+				return core_slice.call(this);
+
+			},
+			get:function(num){//转原生的集合
+				return num ==null?
+				this.toArray():
+				(num<0 ?this[this.length+num]:this[num])
+			},
+			slice:function(){
+				return this.pushStack(core_slice.apply(this.arguments))	
+			},
+			first:function(){
+				return this.eq(0);
+			},
+			last:function(){
+				return this.eq(-1);
+			},
+			pushStack:function(){
+
+			},
+			eq:function(i){
+				var len = this.length,
+				j=+i+(i<0?len:0)
+				return this.pushStack(j>=0 &&j<len ?[this[j]];[])
+			},
+			end:function(){
+				return this.prevObject || this.constructor(null);
+			},
+			map:function(callback){
+				return this.pushStack(jQuery.map(this,function(elem,i){
+					return callback.call(elem,i,elem);
+				}))
+			}
+			}
+	</script>
+</body>
+</html>

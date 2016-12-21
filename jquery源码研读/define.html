@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		(function(window){
+			/*
+			window--
+			即使是在函数外面我们也可以访问到window，但是之所以将其
+			当做参数传递过来，是因为JavaScript本身在查找变量的机制，
+			它会从里向外查询，这样可提升查找效率。（压缩的时候也比较简单）
+			好处原理和变量存储是一致的。
+			undefined--
+			由于undefined这个关键字会因为浏览器的不同而可能被修改，为了防止
+			使用外界已经被修改了的undefined,以参数形式传递过来一定不会有错了
+			use strict--
+			规定我们在严格规范下写代码，a = 3;会报错，因为需要写上var
+			再比如写一个八进制的数 var a = 010;严格模式下是不支持的。
+			但是建议不去用，有兼容性问题（低版本IE）
+			*/
+			jQuery = function(selector,context){
+				return new jQuery.fn.init(selector,context,rootjQuery);
+			}
+
+
+
+			
+		})(window);
+	</script>
+	
+</body>
+</html>
