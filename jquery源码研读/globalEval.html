@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*
+		转为全局变量
+	*/
+		globalEval:function(code){
+			var script,indirect = eval;
+			code = jQuery.trim(code);
+			if(code){
+				if(code.indexOf('use strict') ===1){
+					script = document.createElement('script');
+					script.text = code;
+					document.head.appendChild(script).parentNode.removeChild(script);
+				}else{
+					indirect(code);
+				}
+			}
+		}
+		//about eval
+		function test(){
+			eval('var a =1');
+			alert(a);
+		}
+		test();
+		alert(a);//a is undefined
+		function test(){
+			var ha = eval;
+			ha('var a =1');
+			alert(a);
+		}
+		test();
+		alert(a);//1  相当于window.eval
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src='jquery-1.12.2.js'></script>
+	<script>
+		var arr = [12,9,4,3];
+		$.each(arr,function(i,value){
+			console.log(i,value);
+			//return false; only one ->break
+		});
+
+
+		each:function(obj,callback,args){
+			var value,i =0,length = obj.length,
+			isArray = isArraylike(obj);//judge like array
+			if(args){
+				//use for award
+
+			}else{
+				//use for outside
+				if(isArray){
+					for(; i<length;i++){
+						value = callback.call(obj[i],i,obj[i]);
+						if(value ===false){
+							break;
+						}
+					}
+				}else{
+					for(i in obj){
+						vaule = callback.call(obj[i],i,obj[i]);
+						if(value ===false){
+							break;
+						}
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>
