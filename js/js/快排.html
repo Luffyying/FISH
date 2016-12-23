@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*
+	分治思想
+	*/
+		var arr = [72,6,57,88,60,42,83,73,48,95];
+		function Quick(arr,first,last){
+			if(first<last){
+				var p = quickSort(arr,first,last);
+				Quick(arr,first,p-1);
+				Quick(arr,p+1,last);
+			}
+		}
+	    //console.log(arr);
+		function quickSort(arr,first,last){
+			//console.log(arr);
+			var i = first;
+			var j = last;
+			var x = arr[i];
+			if(i<j){
+				while(i<j){
+					while(i<j && x<=arr[j]){
+						j--;
+					}
+					if(i<j){
+						arr[i++] = arr[j];
+					}
+					while(i<j &&x>=arr[i]){
+						i++;
+					}
+					if(i<j){
+						arr[j--] = arr[i];
+					}	
+				}
+				arr[i]=x;
+				return i;
+				// quickSort(arr,i+1,j);
+			}
+		}
+		Quick(arr,0,9);
+			console.log(arr);
+		
+
+	
+	</script>
+</body>
+</html>
