@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src='jquery-1.12.2.js'></script>
+	<script>
+	/*
+	  $.Callbacks()	便于对函数的管理，可以跳过作用域而执行函数
+	*/
+	jQuery.Callbacks = function(options){
+		var self;
+		var list = [];
+		self = {
+			add:function(){},
+			fire:function(){},
+			remove:function(){}
+		}
+		//about options:once memory unique stopOnFalse
+		//once:only target fire one time
+		//memory:call add()
+		//unique:trigger the different function
+		//stopOnFalse:  can't execute the function which return false
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		function test(){
+			alert('hello');
+		}
+		(function(){
+			function b(){
+				alert('ha');
+			}
+		})();
+		test();
+		b();//访问不到的
+
+		var c = $.Callbacks();
+		function test(){
+			alert('hello');
+		}
+		c.add(test);
+		(function(){
+			function b(){
+				alert('ha');
+			}
+			c.add(b);
+		})();
+		c.fire();
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src='jquery-1.12.2.js'></script>
+	<script>
+		/*
+		 support 用于检测解决浏览器的兼容性
+		 具体解决方法采用hooks实现
+		*/
+		jQuery.support = (function(support){
+
+			return support;
+		})({});
+
+
+		$(function(){
+			for(var attr in $.support){
+				console.log(attr);
+			}
+		})
+	</script>
+</body>
+</html>
