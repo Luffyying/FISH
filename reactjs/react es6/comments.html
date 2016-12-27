@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='build/react.js'></script>
+	<script src='build/react-dom.js'></script>
+	<script src='build/browser.js'></script>
+	<script src='build/jquery-1.12.2.js'></script>
+</head>
+<body>
+    <div id="div1"></div>
+	<script type='text/babel'>
+		var comments = [
+		{author:'wang',body:'lalala,hello to meet you'},
+		{author:'lufei',body:'要成为海贼王一样的人'},
+		{author:'liao',body:'my dog'}
+		];
+		class Comment extends React.Component{
+			  render(){
+			  return (
+			     <div>
+			     <div className ='com_body'>
+			     	{this.props.children}
+			     </div>
+			     <div className = 'com_author'>
+			     	{this.props.author}
+			     </div>
+			     </div>
+			     )
+			  }
+		}
+	    class CommentList extends React.Component{
+	          render(){
+	          	var commentNodes = this.props.comments.map(function(comment,index){
+				return <Comment key ={'comment'+index} author={comment.author}>{comment.body}</Comment>
+	          });
+	              return (
+	                 <div>
+	                   {commentNodes}
+	                 </div>
+	              );
+	          }
+	    }
+	     class CommentForm extends React.Component{
+	          handleSubmit(e){
+	             e.preventDefault();
+	             const author = 
+	             this.refs.author.getDOMNode().value.trim();
+	             const body = this.refs.body.getDOMNode().value.trim();
+	             const form = this.refs.form.getDOMNode();
+
+	             this.props.onSubmit({author:author,body:body});
+	             form.reset();
+	          }
+	          render(){
+	              return (
+	                 <form className='comment_form' ref='form' onSubmit={(e) =>{this.handleSubmit(e)}}>
+	                 	<input type="text" placeholder="your name" ref='author'/>
+	                 	<input type="text" placeholder="your comment" ref='body'/>
+	                 	<input type="submit" value='add comment'/>
+	                 </form>
+	              );
+	          }
+	    }
+		class CommentBox extends React.Component{
+		     constructor(props){
+		        super();
+		        this.state= {
+		        comments:props.comments || []
+		        }
+		     }
+
+			
+			<!-- (e,e3) =>{
+				//this
+			}//默认绑定this,将如下函数改写成
+			success:(data) =>{
+				this.setState({comments:data});
+			}
+			success:data =>{
+				this.setState({comments:data});
+			} -->
+		     loadData(){
+		        $.ajax({
+		        	url:this.props.url,
+		        	dataType:'json',
+		        	success:function(data){
+						this.setState({comments:data});
+		        	}.bind(this),
+		        	error:function(xhr,status,err){
+		        		console.log(err.toString());
+		        	}
+		        });
+		     }
+		     componentDidMount(){
+		        this.loadData();
+		     }
+		     handleNewComment(comment){
+		     //防止出现loading的情形，可以先假设已经成功了
+		     	const comments = this.state.comments;
+		     	const newComments = comments.concat([comment]);
+		     	this.setState({comments:newComments});
+		     	setTimeout(() =>{
+		     	$.ajax({
+		     		url:this.props.url,
+		     		dataType:'json',
+		     		type:'POST',
+		     		data:comment,
+		     		success:comments =>{
+		     			this.setState({comments:comments});
+		     		},
+		     		error:(xhr,status,err){
+		     		    console.log(err.toString());
+		     		}
+		     	});
+		     	},2000)
+		     }
+		     render(){
+		        return (
+		           <div className='a'>
+		           	<h1>Comments</h1>
+		           	<CommentList comments={this.state.comments}/>
+		           	<CommentForm onSubmit={comment =>
+		           	this.handleNewComment(comment)}/>
+		           </div>
+		        );
+		     }
+		}
+		ReactDOM.render(
+		     <CommentBox url='data.json'/>,
+		     document.getElementById('div1')
+		);
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='build/react.js'></script>
+	<script src='build/react-dom.js'></script>
+	<script src='build/browser.js'></script>
+	
+</head>
+<body>
+	<div id="div1"></div>
+	<script type='text/babel'>
+		class Ha extends React.Component{
+		   
+			constructor(){
+			   super();
+			   this.state ={count:10};
+			}
+			update(){
+			   this.setState({
+			       count:this.state.count+2
+			   });
+			}
+			render(){
+				return (
+				    <div>
+				       <h2>Hello React</h2>
+					   <div>{this.state.count}</div>
+					</div>
+					);
+			}
+		}
+		 count = React.render(
+			<Ha/>,document.getElementById('div1')
+		);
+	</script>
+</body>
+</html>
