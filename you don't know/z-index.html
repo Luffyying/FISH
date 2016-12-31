@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			position: absolute;
+			background: pink;
+			z-index: 0;
+			height: 400px;
+			width: 400px;
+		}
+		.a{
+			position: relative;
+			margin-left: -100px;
+			z-index: -1;
+		}
+		.b{
+			position: relative;
+			z-index: -2;
+			margin-top: -30px;
+		}
+		.bo{
+			background: blue;
+			opacity: 0.5;
+		}
+		.btn{
+
+		}
+	</style>
+</head>
+<body>
+	<div class="bo">
+		haha<img class='a' src="me2.jpg" alt="">oo
+		<!-- <img class='b' src="1.jpg" alt=""> -->
+	</div>
+	<button class='btn'>hahaha</button>
+	<script>
+		// var a = document.getElementById('btn');
+		var a = document.querySelector('.btn');
+		a.onclick = function(){
+			alert('hello');
+		}
+	</script>
+	
+</body>
+</html>
