@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link type="text/css" href="content/main.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <!-- ko  -->
+    <ul class="menus" data-bind="foreach:menus">
+      <li><a href="#" data-bind="text:title,attr:{href:route}"></a></li>
+    </ul>
+    <div data-bind="module:moduleOptions,visible:!loading()">
+    </div>
+    <div data-bind="visible:loading()">
+      Loading...
+    </div>
+    <!-- /ko -->
+    <script type="text/javascript" data-main="scripts/main.js" src="scripts/lib/require.js"></script>
+  </body>
+</html>
