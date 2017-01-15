@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1{
+			height: 100px;
+			width: 100px;
+			background: pink;
+			margin: 0 auto;
+		}
+		#div1:hover{
+			width: 200px;
+			transition:width 2s ease ;
+		}
+	     @keyframes change{
+	     	0%{
+	     		opacity: 1;
+	     	}
+	     	50%{
+	     		opacity: 0
+	     	}
+	     	100%{
+	     		opacity: 1;
+	     	}
+	     }
+	</style>
+</head>
+<body>
+	<script>
+	var a = 6;
+		function foo(){
+			var a =2;
+			function bar(){
+				console.log(a);
+			}
+			return bar;
+		}
+		var baz = foo();
+		baz();
+	</script>
+   
+</body>
+</html>

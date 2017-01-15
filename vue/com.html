@@ -1,13 +1,50 @@
-<!DOCTYPE html>
+<!DOCTYPE html
+	>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		.classC{
+			color: blue;
+		}
+		.A{
+			background: red;
+		}
+	</style>
 </head>
 <body>
-	<!-- <div id='main'>
-		
-	</div> -->
+	{{what}}
+	<input type="text" v-model='what' lazy />
+	<p v-if='greet'>come here please</p><!-- 可以根据表达式的值决定在dom中生成或者移除元素 -->
+	<h2 v-show='luck'>this is the world of vue</h2><!-- 改变元素的dispaly 用于显示或者隐藏 -->
+	<ul>
+		<li v-for='(key,item) in items'>{{item}}-{{$index}}--{{key}}</li>
+	</ul>
+	<ul>
+		<li v-for='n in 10'>{{n}}</li><!-- v-for仍然支持整数 -->
+	</ul>
+	<!-- filterBy -->
+	<input type="text" v-model='test'>
+	<ul>
+		<li v-for="message in messages | filterBy test in 'name'">{{message.name}}</li><!-- 过滤器filterBy -->
+	</ul>
+	<ul>
+		<li v-for="message in messages | orderBy field flag">{{message.name}}</li>
+	</ul>
+	<h3 v-text='hello'></h3><h3>{{hello}}</h3>
+	<img v-bind:src="imgSrc"><!-- 缩写形式为:<img :src="imgSrc" alt=""> -->
+	<!-- 绑定的作用就是用于响应更新HTML的特性，如class或者style -->
+	<div v-bind:class="[classA,{classB:isB,classC:isC}]">let's work together!</div>
+	<!-- 没有参数的时候可以绑定一个对象，但是这时候class and style不能使用数组 -->
+	<div v-bind="{id:someProp,otherAttr:attr}">some hobby like this</div>
+	<!-- v-on用于绑定事件监听器 -->
+	<button v-on:click="doThis">click me</button>
+	<button v-on:click="doThat('hello',$event)">click me too</button>
+	<!-- v-on后面还可以增加修饰符，如stop,prevent,capture,self等 -->
+	<button @click.stop="doThis">click me three</button>
+	<!-- v-el为DOM元素注册了一个索引，然后通过$els来访问这个元素 -->
+	<span v-el='msg'>'hello'</span><!-- =====引用:this.$els.msg.textContent -->
 	<mycom msg='sss'></mycom>
 	<script src='vue.js'></script>
 	<script>
@@ -15,7 +52,8 @@
 		template:"<div>{{msg}}</div>",
 		//props:['msg']
 		props:{
-			msg:[Number,String];
+			data:'haha',
+			msg:[Number,String]
 		}
 	});
 	Vue.component('mycom',com);
@@ -23,7 +61,32 @@
 		// 	template:"hello world"
 		// });
     new Vue({
-    	el:'body'
+    	el:'body',
+    	data:
+    	{
+    		someProp:'div1',
+    		otherAttr:'other',
+    		classA:'A',
+    		isB:false,
+    		isC:true,
+    		flag:true,
+    		field:'tag',
+    		hello:'comeon',
+    		what:'hello world',
+	    	greet:true,
+	        luck:false,
+	        items:[1,2,3,4,5,6],
+	        messages:[{name:'快车',tag:2},{name:'慢车',tag:0},{name:'顺风车',tag:1}]
+    	},
+    	methods:{
+    		doThis:function(e){//只有传一个参数的时候 DOM event为事件的唯一参数，当传入多个参数的时候，可以使用$event来访问原生DOM
+    			alert(e.target);
+    			alert('say hello');
+    		},
+    		doThat:function(str,e){
+    			alert(str + '$event' +e.target);
+    		}
+    	}
 
     });
 	</script>
